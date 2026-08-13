@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyotish Ayni | Astrología Védica & Sanación Holística - Andrea B. Menéndez</title>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jyotish: {
+                            cobalt: '#1B3B6F',
+                            dark: '#0F213E',
+                            light: '#8EB8E5',
+                            soft: '#EAF2FA',
+                            gold: '#D4AF37',
+                            goldhover: '#B59226',
+                            cream: '#FAFAFA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0F213E 0%, #1B3B6F 50%, #2A4D85 100%);
+        }
+        .gradient-soft {
+            background: linear-gradient(180deg, #EAF2FA 0%, #FAFAFA 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(27, 59, 111, 0.08);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 20px 35px -5px rgba(27, 59, 111, 0.15);
+        }
+        .pulse-gold {
+            animation: pulse-gold 2.5s infinite;
+        }
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+    </style>
+</head>
+<body class="bg-jyotish-cream text-gray-800 font-sans antialiased selection:bg-jyotish-light selection:text-jyotish-dark">
+
+    <!-- CINTILLO SUPERIOR - RADIO MEGA & CONTACTO RÁPIDO -->
+    <div class="bg-jyotish-dark text-jyotish-soft text-xs md:text-sm py-2.5 px-4 text-center border-b border-jyotish-cobalt/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <span class="bg-jyotish-gold/20 text-jyotish-gold px-2 py-0.5 rounded font-semibold text-xs tracking-wide uppercase flex items-center gap-1">
+                    <i class="fa-solid fa-radio text-[11px]"></i> En Medios
+                </span>
+                <span>Escucha la columna de Andrea en <strong>Radio Mega 91.9 Zapala</strong></span>
+                <a href="https://www.radiomega919zapala.org/" target="_blank" rel="noopener" class="underline hover:text-jyotish-gold transition-colors font-medium ml-1">
+                    Escuchar en Vivo <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-0.5"></i>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-xs text-jyotish-light">
+                <a href="mailto:jyotishayni23@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
+                    <i class="fa-regular fa-envelope text-jyotish-gold"></i>
+                    <span>jyotishayni23@gmail.com</span>
+                </a>
+                <a href="https://wa.me/5492942408229" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                    <span>+54 9 2942 40-8229</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO / BRAND -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-jyotish-soft flex items-center justify-center text-jyotish-cobalt border border-jyotish-light/40 group-hover:scale-105 transition-transform overflow-hidden">
+                    <img src="logo jyotish ayni final.png" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-om text-2xl text-jyotish-cobalt\'></i>';" alt="Jyotish Ayni Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl md:text-2xl text-jyotish-cobalt tracking-wider uppercase leading-none">
+                        Jyotish Ayni
+                    </span>
+                    <span class="text-[10px] md:text-xs text-gray-500 tracking-widest uppercase mt-1">
+                        Astrología Védica & Sanación
+                    </span>
+                </div>
+            </a>
+
+            <!-- NAV LINKS - DESKTOP -->
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-gray-700">
+                <a href="#inicio" class="hover:text-jyotish-cobalt transition-colors">Inicio</a>
+                <a href="#eje" class="hover:text-jyotish-cobalt transition-colors">El Eje Védico</a>
+                <a href="#procesos" class="hover:text-jyotish-cobalt transition-colors">Procesos</a>
+                <a href="#blog" class="hover:text-jyotish-cobalt transition-colors">Bitácora & Artículos</a>
+                <a href="#andrea" class="hover:text-jyotish-cobalt transition-colors">Sobre Mí</a>
+                <a href="#luna" class="hover:text-jyotish-cobalt transition-colors text-jyotish-cobalt font-semibold flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-jyotish-gold animate-ping"></span>
+                    <span>Clima Lunar</span>
+                </a>
+                <a href="#radio" class="hover:text-jyotish-cobalt transition-colors">Radio</a>
+            </nav>
+
+            <!-- CTA BOTÓN HEADER -->
+            <div class="flex items-center gap-3">
+                <button onclick="openBookingModal('General')" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white font-medium text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                    <span>Agendar Turno</span>
+                </button>
+                
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobileMenuBtn" class="md:hidden text-jyotish-cobalt p-2 focus:outline-none" aria-label="Menú">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 font-medium text-gray-700 text-sm">
+            <a href="#inicio" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">Inicio</a>
+            <a href="#eje" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">El Eje Védico</a>
+            <a href="#procesos" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">Procesos Individuales</a>
+            <a href="#blog" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">📖 Bitácora & Artículos</a>
+            <a href="#andrea" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">Sobre Mí</a>
+            <a href="#luna" class="block py-2 text-jyotish-cobalt font-semibold border-b border-gray-100">🌙 Clima Lunar & Tránsitos</a>
+            <a href="#radio" class="block py-2 hover:text-jyotish-cobalt border-b border-gray-100">Radio Mega</a>
+            <a href="mailto:jyotishayni23@gmail.com" class="block py-2 text-jyotish-cobalt"><i class="fa-regular fa-envelope mr-2"></i>jyotishayni23@gmail.com</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="gradient-bg text-white relative overflow-hidden py-16 lg:py-24">
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-jyotish-light/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-24 w-96 h-96 rounded-full bg-jyotish-gold/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- COLUMNA IZQUIERDA: TEXTOS Y CTA -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-jyotish-light text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-star text-jyotish-gold"></i>
+                        <span>Acompañamiento Holístico & Astrología Sideral</span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+                        Descubre el mapa de tu alma a través de la <span class="text-jyotish-light italic font-normal">Astrología Védica</span>
+                    </h1>
+
+                    <p class="text-jyotish-soft text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Un espacio de autoconocimiento, orientación y sanación integral donde la luz del <strong>Jyotish</strong> actúa como faro para comprender tu origen kármico, armonizar tus ritmos vitales y vivir en bienestar.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="openBookingModal('Carta Natal Védica')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-emerald-800"></i>
+                            <span>Agendar Turno por WhatsApp</span>
+                        </button>
+
+                        <a href="#luna" class="bg-white/10 hover:bg-white/20 text-white font-medium text-sm sm:text-base px-6 py-3.5 rounded-full border border-white/30 transition-all flex items-center justify-center gap-2">
+                            <span>Ver Luna Llena de Cáncer</span>
+                            <i class="fa-solid fa-moon text-jyotish-gold text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- BADGES MODALIDAD & CONTACTO -->
+                    <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-jyotish-soft/80 border-t border-white/10">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-laptop text-jyotish-light text-sm"></i>
+                            <span>Consultas Online (Internacional)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-jyotish-gold text-sm"></i>
+                            <span>Atención Presencial</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-envelope text-jyotish-light text-sm"></i>
+                            <a href="mailto:jyotishayni23@gmail.com" class="hover:underline">jyotishayni23@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DERECHA: FOTO DE ANDREA B. MENÉNDEZ -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-jyotish-gold/30 to-jyotish-light/30 rounded-3xl rotate-3 scale-105 blur-sm"></div>
+                        
+                        <div class="relative bg-jyotish-dark rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                            <img src="Andre Jyotish Ayni azul y rulos.png" 
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800';" 
+                                 alt="Andrea B. Menéndez - Astróloga Védica" 
+                                 class="w-full h-auto object-cover object-top hover:scale-105 transition-transform duration-500">
+                            
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-jyotish-dark via-jyotish-dark/80 to-transparent p-6 text-center">
+                                <h3 class="font-serif text-xl font-bold text-white">Andrea B. Menéndez</h3>
+                                <p class="text-xs text-jyotish-light font-medium tracking-wider uppercase mt-0.5">Astróloga Védica & Terapeuta Holística</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EL EJE: ¿POR QUÉ ASTROLOGÍA VÉDICA? -->
+    <section id="eje" class="py-16 sm:py-20 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            
+            <div class="inline-block">
+                <span class="text-jyotish-cobalt uppercase text-xs font-bold tracking-widest bg-jyotish-soft px-3 py-1 rounded-full">
+                    Filosofía & Método
+                </span>
+            </div>
+
+            <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-jyotish-cobalt">
+                La luz que guía cada proceso de sanación
+            </h2>
+
+            <div class="w-16 h-1 bg-jyotish-gold mx-auto rounded-full"></div>
+
+            <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-light">
+                En <strong>Jyotish Ayni</strong>, la <strong>Astrología Védica</strong> es el mapa fundamental que articula todo nuestro trabajo. A diferencia de la lectura convencional, el mandala astrológico sideral nos permite leer el mapa luminoso de tu alma (<em>Carta Rasi</em>), identificar el origen kármico o patrones generacionales y elegir el momento idóneo (<em>Muhurta</em>) para actuar.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 text-left">
+                <div class="bg-jyotish-cream p-6 rounded-2xl border border-gray-100 card-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v19m9-9H3m15.364-6.364l-14.14 14.14m0-14.14l14.14 14.14M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt mb-2">Diagnóstico Certero</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Comprende tus tendencias kármicas, fortalezas naturales y ciclos planetarios (Dashas) para tomar decisiones en armonía.
+                    </p>
+                </div>
+
+                <div class="bg-jyotish-cream p-6 rounded-2xl border border-gray-100 card-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 2 9 18zm0 0v-8"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt mb-2">Medicina Holística</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Integramos el diagnóstico astrológico con la sabiduría del Ayurveda (Doshas) y la Astromedicina para equilibrar la salud.
+                    </p>
+                </div>
+
+                <div class="bg-jyotish-cream p-6 rounded-2xl border border-gray-100 card-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt mb-2">Liberación Integral</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Complementamos con Biodecodificación, Constelaciones, Terapias Florales, Reiki y Adaptógenos para liberar memorias guardadas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROCESOS INDIVIDUALES -->
+    <section id="procesos" class="py-16 sm:py-24 gradient-soft relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="text-jyotish-cobalt uppercase text-xs font-bold tracking-widest bg-white px-3.5 py-1 rounded-full shadow-sm border border-gray-100">
+                    Atención Personalizada
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-jyotish-cobalt">
+                    Procesos de Acompañamiento Individual
+                </h2>
+                <p class="text-gray-600 text-base font-light">
+                    Explora nuestras herramientas de lectura astrológica y terapias vibracionales.
+                </p>
+                
+                <!-- FILTER TABS SERVICIOS -->
+                <div class="flex flex-wrap justify-center gap-2 pt-4" id="serviceFilters">
+                    <button data-filter="all" class="filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm">
+                        Todos los Servicios
+                    </button>
+                    <button data-filter="astrologia" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">
+                        Astrología Védica
+                    </button>
+                    <button data-filter="salud" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">
+                        Astromedicina & Ayurveda
+                    </button>
+                    <button data-filter="terapias" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">
+                        Terapias Vibracionales
+                    </button>
+                </div>
+            </div>
+
+            <!-- GRILLA DE CARDS DE SERVICIOS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid">
+                
+                <!-- CARD 1 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="astrologia">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-carta-natal.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Carta Natal" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-jyotish-cobalt bg-jyotish-soft px-2.5 py-1 rounded-full">
+                                Servicio Estrella
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Carta Natal Védica (Carta Rasi)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Lectura profunda del mapa de tu alma. Analizamos tu ascendente sideral, posiciones planetarias, nakshatras, propósito vital (Dharma) y los periodos clave de tu vida (Dashas).
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Sesión Individual</span>
+                        <button onclick="openBookingModal('Carta Natal Védica')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="astrologia">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-revolucion-solar.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Revolución Solar" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                                Anual
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Revolución Solar Védica</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Análisis detallado de las tendencias energéticas, oportunidades y aprendizajes que se activan para tu nuevo año personal a partir de tu cumpleaños.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Sesión Individual</span>
+                        <button onclick="openBookingModal('Revolución Solar Védica')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="salud">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-ayurveda.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Ayurveda" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18zM12 9v6m-3-3h6"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-jyotish-cobalt bg-jyotish-soft px-2.5 py-1 rounded-full">
+                                Salud & Bienestar
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Astromedicina & Ayurveda</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Diagnóstico energético de tu constitución biológica (Doshas: Vata, Pitta, Kapha) a través de la carta natal para la prevención de síntomas y equilibrio vital.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Sesión Individual</span>
+                        <button onclick="openBookingModal('Astromedicina & Ayurveda')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="terapias">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-constelaciones.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Constelaciones" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                                Biodecodificación
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Astrogenealogía & Constelaciones</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Rastreo y liberación de memorias familiares, lealtades invisibles y patrones repetitivos inscritos en el campo luminoso de la carta natal.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Sesión Individual</span>
+                        <button onclick="openBookingModal('Astrogenealogía & Constelaciones')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="astrologia">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-muhurta.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Muhurta" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                                Elección de Fechas
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Momentos Oportunos (Muhurta)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Estudio personalizado para elegir momentos auspiciosos para iniciar proyectos, firmas, bodas, viajes o decisiones trascendentes.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Estudio Personalizado</span>
+                        <button onclick="openBookingModal('Momentos Oportunos (Muhurta)')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 card-shadow flex flex-col justify-between" data-category="terapias">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-12 h-12 rounded-2xl bg-jyotish-soft text-jyotish-cobalt flex items-center justify-center p-2.5">
+                                <img src="icono-terapias-florales.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" alt="Terapias Florales" class="w-full h-full object-contain hidden">
+                                <svg class="w-7 h-7 text-jyotish-cobalt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                                Complementarias
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Terapias Florales & Reiki</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Armonización integral mediante Florales de Bach y California, Terapia del Té, desbloqueo de chakras con Reiki, hongos Adaptógenos y Yoga terapia.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i> Acompañamiento</span>
+                        <button onclick="openBookingModal('Terapias Florales & Reiki')" class="text-jyotish-cobalt hover:text-jyotish-dark text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 group">
+                            <span>Agendar</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: BITÁCORA VÉDICA & BLOG DE ARTÍCULOS REALES -->
+    <section id="blog" class="py-16 sm:py-24 bg-white relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="text-jyotish-cobalt uppercase text-xs font-bold tracking-widest bg-jyotish-soft px-3.5 py-1 rounded-full border border-jyotish-light/30">
+                    Divulgación & Sabiduría
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-jyotish-cobalt">
+                    Bitácora Védica: Artículos de Andrea B. Menéndez
+                </h2>
+                <p class="text-gray-600 text-base font-light">
+                    Espacio donde Andrea comparte enseñanzas sobre el mandala sideral, reflexiones de coyuntura y sus columnas de radio.
+                </p>
+
+                <!-- FILTROS BLOG -->
+                <div class="flex flex-wrap justify-center gap-2 pt-2" id="blogFilters">
+                    <button data-bfilter="all" class="blog-filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm">
+                        Todos los Artículos
+                    </button>
+                    <button data-bfilter="astrologia" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">
+                        Astrología Védica
+                    </button>
+                    <button data-bfilter="coyuntura" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">
+                        Análisis & Coyuntura
+                    </button>
+                    <button data-bfilter="ritmos" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">
+                        Radio Mega 91.9
+                    </button>
+                </div>
+            </div>
+
+            <!-- GRILLA DE ARTÍCULOS REALES DE ANDREA -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="articlesGrid">
+                
+                <!-- NUEVO ARTÍCULO 3: EL CIELO Y LA TIERRA (ID 3) -->
+                <article class="blog-card bg-jyotish-cream rounded-3xl overflow-hidden border-2 border-jyotish-gold/40 card-shadow flex flex-col justify-between" data-bcategory="coyuntura">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-jyotish-dark">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="El cielo y la tierra" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-jyotish-gold text-jyotish-dark text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                                ✨ Nuevo Análisis
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-3 text-xs text-gray-500">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Agosto 2026</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 7 min de lectura</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-jyotish-cobalt leading-snug">
+                                El cielo y la tierra: ¿Evolución colectiva o el costo de la rigidez?
+                            </h3>
+                            <p class="text-xs text-gray-600 leading-relaxed font-light line-clamp-3">
+                                Análisis de coyuntura y astrología secular. Reflexiones sobre la rigidez institucional, la mediación en la Patagonia y la lección de solidaridad en Pino Hachado.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(3)" class="w-full bg-jyotish-cobalt hover:bg-jyotish-dark text-white font-semibold text-xs py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                            <span>Leer Artículo Completo</span>
+                            <i class="fa-solid fa-book-open text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- NOTA REAL 1: LUNA LLENA DE CÁNCER (ID 1) -->
+                <article class="blog-card bg-jyotish-cream rounded-3xl overflow-hidden border border-gray-200 card-shadow flex flex-col justify-between" data-bcategory="astrologia">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-jyotish-dark">
+                            <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=800" alt="Luna Llena de Cáncer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-jyotish-cobalt text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                                Astrología Védica
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-3 text-xs text-gray-500">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Astrología Védica</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 6 min de lectura</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-jyotish-cobalt leading-snug">
+                                Luna Llena de Cáncer 2026 desde la Mirada de la Jyotisha
+                            </h3>
+                            <p class="text-xs text-gray-600 leading-relaxed font-light line-clamp-3">
+                                Un llamado a bajar el volumen del ruido externo para volver a escuchar nuestra propia esencia. Reflexiones sobre la casa interior y el compromiso colectivo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(1)" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-3 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2">
+                            <span>Leer Artículo Completo</span>
+                            <i class="fa-solid fa-book-open text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- NOTA REAL 2: LUNA NUEVA DE GÉMINIS / RADIO MEGA (ID 2) -->
+                <article class="blog-card bg-jyotish-cream rounded-3xl overflow-hidden border border-gray-200 card-shadow flex flex-col justify-between" data-bcategory="ritmos">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-jyotish-dark">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800" alt="Luna Nueva en Géminis" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 bg-jyotish-cobalt text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                                <i class="fa-solid fa-radio text-[10px]"></i> Radio Mega 91.9
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-3 text-xs text-gray-500">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Columna Radio</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 5 min de lectura</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-jyotish-cobalt leading-snug">
+                                Lo Que Nos Dejó la Luna Nueva de Géminis: El Llamado al Servicio
+                            </h3>
+                            <p class="text-xs text-gray-600 leading-relaxed font-light line-clamp-3">
+                                Analizamos los acontecimientos bajo esta luna, los extremos energéticos y cómo la solidaridad comunitaria en Zapala y Neuquén ante las heladas responde al llamado del universo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(2)" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-3 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2">
+                            <span>Leer Artículo Completo</span>
+                            <i class="fa-solid fa-book-open text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE ANDREA B. MENÉNDEZ -->
+    <section id="andrea" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- FOTO O ILUSTRACIÓN DE LOGO -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="bg-jyotish-cream p-8 rounded-3xl border border-gray-100 text-center card-shadow relative">
+                        <img src="logo jyotish ayni final.png" 
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=400';" 
+                             alt="Logo Jyotish Ayni" 
+                             class="w-48 h-auto mx-auto rounded-2xl shadow-md mb-6">
+                        <div class="space-y-2">
+                            <h4 class="font-serif font-bold text-xl text-jyotish-cobalt">Andrea B. Menéndez</h4>
+                            <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Fundadora de Jyotish Ayni</p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-gray-200 text-xs text-gray-600 italic">
+                            "Ayni representa la ley ancestral de reciprocidad con la vida; Jyotish es la luz que ilumina nuestro camino."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIOGRAFÍA & FILOSOFÍA -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <span class="text-jyotish-cobalt uppercase text-xs font-bold tracking-widest bg-jyotish-soft px-3 py-1 rounded-full">
+                        Sobre la Fundadora
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-jyotish-cobalt leading-tight">
+                        Sabiduría ancestral y contención profesional al servicio de tu evolución
+                    </h2>
+                    <div class="w-16 h-1 bg-jyotish-gold rounded-full"></div>
+
+                    <div class="space-y-4 text-gray-600 leading-relaxed font-light text-base">
+                        <p>
+                            Con una sólida trayectoria de estudio e investigación en las disciplinas védicas y medicinas holísticas, <strong>Andrea B. Menéndez</strong> acompaña a consultantes en sus procesos de transformación personal y búsqueda de salud física, emocional y espiritual.
+                        </p>
+                        <p>
+                            Su filosofía sostiene que cada individuo posee un mapa único marcado en las estrellas. A través de la <strong>Astrología Védica (Jyotish)</strong> como eje integrador, articula herramientas complementarias de la cosmovisión oriental y las terapias naturales para restablecer el orden y la armonía.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-xs font-medium text-jyotish-cobalt bg-jyotish-soft px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-certificate text-jyotish-gold"></i>
+                            <span>Años de Estudio Dedicado</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-medium text-jyotish-cobalt bg-jyotish-soft px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-users text-jyotish-gold"></i>
+                            <span>Atención Particular Pacientes</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DINÁMICA: LECTURA DE LA LUNA DE LA FECHA (REUBICADA AL FINAL) -->
+    <section id="luna" class="py-16 bg-gradient-to-b from-jyotish-dark to-[#162A50] text-white relative border-t-2 border-jyotish-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+                <div class="text-center md:text-left space-y-2">
+                    <div class="inline-flex items-center gap-2 bg-jyotish-gold/20 text-jyotish-gold border border-jyotish-gold/30 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-moon text-jyotish-gold"></i>
+                        <span>Ciclo Sideral Activo</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                        Luna Llena de Cáncer desde la Jyotisha
+                    </h2>
+                    <p class="text-jyotish-soft text-xs sm:text-sm font-light">
+                        Guía de tránsitos astrales y recomendaciones para el periodo actual por Andrea B. Menéndez.
+                    </p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/20 text-center sm:text-right">
+                    <span class="text-[11px] uppercase tracking-wider text-jyotish-light block">Fase Actual</span>
+                    <span class="font-serif text-lg font-bold text-jyotish-gold flex items-center justify-center sm:justify-end gap-2">
+                        <i class="fa-solid fa-circle text-xs text-jyotish-gold animate-pulse"></i>
+                        <span>Luna Llena en Cáncer Sideral</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DE LECTURA DE LUNA (VIDEO MP4 LOCAL O PORTADA) -->
+            <div class="bg-jyotish-cobalt/40 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- COLUMNA IZQUIERDA: REPRODUCTOR DE VIDEO -->
+                    <div class="lg:col-span-6">
+                        <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/20 bg-jyotish-dark shadow-xl group">
+                            
+                            <!-- Reproductor de Video Nativo (video-luna.mp4) -->
+                            <video class="w-full h-full object-cover" controls poster="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=1000" id="lunaVideoPlayer">
+                                <source src="video-luna.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video HTML5.
+                            </video>
+
+                        </div>
+                        <p class="text-[11px] text-jyotish-light text-center mt-2.5 italic">
+                            <i class="fa-solid fa-video mr-1"></i> "Un ciclo lunar que nos pide bajar el ruido externo para volver a escuchar nuestra esencia."
+                        </p>
+                    </div>
+
+                    <!-- COLUMNA DERECHA: TEXTO Y RECOMENDACIONES DE LA NOTA DE ANDREA -->
+                    <div class="lg:col-span-6 space-y-5">
+                        <div class="space-y-2">
+                            <span class="text-xs text-jyotish-gold font-semibold uppercase tracking-wider">Mensaje de la Luna Llena</span>
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white leading-snug">
+                                Encontrar la armonía entre lo que pensamos y sentimos
+                            </h3>
+                        </div>
+
+                        <p class="text-jyotish-soft text-sm sm:text-base leading-relaxed font-light">
+                            Estamos transitando un momento para cuidar la paz mental, soltar apegos viejos y 'soñar con los pies en la tierra'. Es tiempo de proyectar el futuro que queremos, pero actuando con realismo y metas claras para transformar la irritabilidad en bienestar.
+                        </p>
+
+                        <div class="space-y-2 pt-2 border-t border-white/10 text-xs sm:text-sm text-jyotish-soft">
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-jyotish-gold mt-1"></i>
+                                <span><strong>Nivel Personal:</strong> Cuiden su paz mental y la honestidad en su hogar interior para conservar la paz.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-jyotish-gold mt-1"></i>
+                                <span><strong>Nivel Social:</strong> Superar el individualismo. Menos ego y más equidad para construir un futuro tangible.</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-3">
+                            <button onclick="openArticleModal(1)" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-xs sm:text-sm px-5 py-3 rounded-full transition-all shadow-md flex items-center gap-2">
+                                <i class="fa-solid fa-book-open text-base"></i>
+                                <span>Leer Artículo Completo</span>
+                            </button>
+                            <button onclick="openBookingModal('Seguimiento Ciclos Lunares')" class="bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm px-5 py-3 rounded-full border border-white/20 transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                                <span>Consultar por WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN RADIO & DIVULGACIÓN -->
+    <section id="radio" class="py-16 bg-jyotish-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-jyotish-cobalt/60 rounded-3xl p-8 sm:p-12 border border-jyotish-light/20 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-jyotish-gold text-xs font-bold uppercase tracking-widest bg-jyotish-gold/10 px-3 py-1 rounded-full border border-jyotish-gold/20">
+                            <i class="fa-solid fa-podcast"></i>
+                            <span>Espacio de Difusión</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+                            Jyotish Ayni en Radio Mega 91.9
+                        </h3>
+                        <p class="text-jyotish-soft text-sm sm:text-base font-light leading-relaxed">
+                            Andrea comparte semanalmente contenidos educativos sobre Astrología Védica, tránsitos planetarios, filosofía ancestral y recomendaciones para vivir en sintonía con los ritmos naturales.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end">
+                        <a href="https://www.radiomega919zapala.org/" target="_blank" rel="noopener" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-radio"></i>
+                            <span>Ir a Radio Mega 91.9</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL - SOLICITUD DE TURNOS -->
+    <section class="py-20 gradient-bg text-white text-center relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold">
+                ¿Listo para comenzar tu proceso de autoconocimiento?
+            </h2>
+            <p class="text-jyotish-soft text-base sm:text-lg font-light max-w-2xl mx-auto">
+                Las consultas individuales se realizan en modalidad <strong>Virtual</strong> (a través de videoconferencia para cualquier parte del mundo) y <strong>Presencial</strong>.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="openBookingModal('General')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-base px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Solicitar Turno por WhatsApp</span>
+                </button>
+                <a href="mailto:jyotishayni23@gmail.com" class="bg-white/10 hover:bg-white/20 text-white font-medium text-base px-8 py-4 rounded-full border border-white/20 transition-all inline-flex items-center gap-3">
+                    <i class="fa-regular fa-envelope text-xl"></i>
+                    <span>Escribir por Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0A1628] text-gray-400 py-12 text-xs border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="space-y-3 md:col-span-2">
+                    <span class="font-serif font-bold text-lg text-white uppercase tracking-wider block">Jyotish Ayni</span>
+                    <p class="text-gray-400 max-w-sm leading-relaxed">
+                        Espacio holístico guiado por Andrea B. Menéndez. Astrología Védica, Astromedicina, Ayurveda, Biodecodificación y Terapias Vibracionales.
+                    </p>
+                    <div class="pt-2 space-y-1 text-gray-300">
+                        <p><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i><strong>WhatsApp:</strong> +54 9 2942 40-8229</p>
+                        <p><i class="fa-regular fa-envelope text-jyotish-gold mr-2"></i><strong>Email:</strong> jyotishayni23@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-white font-semibold uppercase tracking-wider block mb-3">Navegación</span>
+                    <a href="#inicio" class="block hover:text-white transition-colors">Inicio</a>
+                    <a href="#eje" class="block hover:text-white transition-colors">El Eje Védico</a>
+                    <a href="#procesos" class="block hover:text-white transition-colors">Procesos Individuales</a>
+                    <a href="#blog" class="block hover:text-white transition-colors">Bitácora</a>
+                    <a href="#andrea" class="block hover:text-white transition-colors">Sobre Mí</a>
+                    <a href="#luna" class="block hover:text-white transition-colors">Clima Lunar</a>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-white font-semibold uppercase tracking-wider block mb-3">Atención</span>
+                    <p class="text-gray-400">Modalidad Online (Internacional)</p>
+                    <p class="text-gray-400">Atención Presencial</p>
+                    <p class="text-gray-400 mt-2">Zapala, Neuquén, Argentina</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
+                <p>Copyright © 2026 Jyotish Ayni - Andrea B. Menéndez. Todos los derechos reservados.</p>
+                <p>Desarrollado para difusión e integración de la Astrología Védica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE RESERVA DE TURNOS WHATSAPP -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300" id="bookingModalContent">
+            
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 bg-jyotish-soft text-jyotish-cobalt rounded-2xl flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 text-2xl"></i>
+                </div>
+                <h3 class="font-serif font-bold text-xl text-jyotish-cobalt">Solicitar Turno</h3>
+                <p class="text-xs text-gray-500">Coordinaremos día y horario para tu consulta individual con Andrea B. Menéndez.</p>
+                <p class="text-[11px] text-jyotish-cobalt font-medium pt-1"><i class="fa-regular fa-envelope mr-1"></i>jyotishayni23@gmail.com</p>
+            </div>
+
+            <form id="whatsappForm" onsubmit="sendWhatsApp(event)" class="space-y-4 text-xs sm:text-sm">
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Servicio de Interés</label>
+                    <select id="modalService" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-jyotish-cobalt focus:outline-none bg-gray-50">
+                        <option value="Carta Natal Védica">Carta Natal Védica (Carta Rasi)</option>
+                        <option value="Revolución Solar Védica">Revolución Solar Védica</option>
+                        <option value="Astromedicina & Ayurveda">Astromedicina & Ayurveda</option>
+                        <option value="Astrogenealogía & Constelaciones">Astrogenealogía & Constelaciones</option>
+                        <option value="Momentos Oportunos (Muhurta)">Momentos Oportunos (Muhurta)</option>
+                        <option value="Terapias Florales & Reiki">Terapias Florales & Reiki</option>
+                        <option value="Consulta General">Consulta General</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Tu Nombre Completo</label>
+                    <input type="text" id="userName" required placeholder="Ej. María López" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-jyotish-cobalt focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Tu Correo Electrónico</label>
+                    <input type="email" id="userEmail" required placeholder="ejemplo@email.com" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-jyotish-cobalt focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700 mb-1">Modalidad de Preferencia</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="border border-gray-200 rounded-xl p-2.5 flex items-center gap-2 cursor-pointer hover:bg-jyotish-soft transition-colors">
+                            <input type="radio" name="modalidad" value="Online" checked class="text-jyotish-cobalt focus:ring-jyotish-cobalt">
+                            <span>Online (Zoom)</span>
+                        </label>
+                        <label class="border border-gray-200 rounded-xl p-2.5 flex items-center gap-2 cursor-pointer hover:bg-jyotish-soft transition-colors">
+                            <input type="radio" name="modalidad" value="Presencial" class="text-jyotish-cobalt focus:ring-jyotish-cobalt">
+                            <span>Presencial</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Enviar Solicitud por WhatsApp</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- MODAL DE LECTURA DE ARTÍCULO / BLOG -->
+    <div id="articleModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl relative transform scale-95 transition-transform duration-300" id="articleModalContent">
+            
+            <button onclick="closeArticleModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-9 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div id="articleBody" class="space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <!-- El contenido dinámico se carga vía JavaScript -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LÓGICA INTERACTIVA -->
+    <script>
+        // Toggle Menú Móvil
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filtrado de Tarjetas de Servicios
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-jyotish-cobalt', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+                });
+                
+                btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+                btn.classList.add('bg-jyotish-cobalt', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+
+                serviceCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Filtrado de Artículos de Blog
+        const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        blogFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                blogFilterBtns.forEach(b => {
+                    b.classList.remove('bg-jyotish-cobalt', 'text-white');
+                    b.classList.add('bg-jyotish-cream', 'text-gray-700', 'border', 'border-gray-200');
+                });
+                
+                btn.classList.remove('bg-jyotish-cream', 'text-gray-700', 'border', 'border-gray-200');
+                btn.classList.add('bg-jyotish-cobalt', 'text-white');
+
+                const filter = btn.getAttribute('data-bfilter');
+
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-bcategory') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Base de Datos de Artículos REALES de Andrea
+        const articles = {
+            1: {
+                title: "LUNA LLENA DE CÁNCER 2026 DESDE LA MIRADA DE LA JYOTISHA",
+                category: "Astrología Védica",
+                date: "Reciente 2026",
+                readTime: "6 min de lectura",
+                content: `
+                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Astrología Védica • Andrea B. Menéndez</span>
+                    <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-3">LUNA LLENA DE CÁNCER 2026</h2>
+                    <p class="font-light leading-relaxed mb-4 text-gray-600 italic">
+                        Buenos días. Hoy vamos a hablar de la Luna Llena de Cáncer desde la mirada de la Jyotisha.
+                    </p>
+                    
+                    <p class="font-light leading-relaxed mb-4">
+                        Estamos transitando un ciclo lunar que nos pide, ante todo, <strong>bajar el volumen del ruido externo para volver a escuchar nuestra propia esencia</strong>.
+                    </p>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">1. En lo Personal: Nuestra "casa" interior</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        A nivel individual, la invitación es a buscar una armonía real entre lo que pensamos y lo que sentimos. Es el momento de ser profundamente honestos con nosotros mismos para que la belleza que llevamos dentro se note afuera.
+                    </p>
+                    
+                    <div class="bg-jyotish-soft p-5 rounded-2xl border-l-4 border-jyotish-gold text-xs sm:text-sm text-jyotish-dark my-4 space-y-2">
+                        <p class="font-semibold text-jyotish-cobalt">¿El consejo para hoy?</p>
+                        <p class="font-light">Cuiden su paz mental. No permitan que las voces o juicios de los demás les generen dudas o inestabilidad en su hogar. Es tiempo de sanar, de soltar apegos viejos y de <em>'soñar con los pies en la tierra'</em>. Se trata de proyectar el futuro que queremos, pero actuando con realismo y metas claras para transformar la irritabilidad en bienestar.</p>
+                    </div>
+
+                    <p class="font-light leading-relaxed mb-4">
+                        Si ignoramos este llamado, el riesgo es caer en una ansiedad constante o en un bajón pesimista. Podemos volvernos personas frías, tercas o calculadoras, y terminar atrapados en relaciones marcadas por los celos, la posesividad y la inestabilidad emocional. Básicamente, si no sanamos por dentro, perdemos nuestra paz y nuestra autenticidad.
+                    </p>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">2. En lo Político y Social: Construir desde el "nosotros"</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        Si miramos hacia afuera, el mensaje es un llamado urgente a superar el individualismo extremo que nos fragmenta como sociedad. Necesitamos pasar del 'sálvese quien pueda' a una construcción basada en el bienestar común.
+                    </p>
+
+                    <p class="font-light leading-relaxed mb-3">
+                        El gran desafío colectivo es la expansión de nuestra ética. Necesitamos liderazgos que no sean agresivos ni autoritarios, sino benevolentes, que respeten los derechos ajenos y tengan vocación de servicio. La clave para gobernarnos mejor está en el diálogo real: aprender a escuchar ideas distintas para crear una forma de pensar donde quepamos todos. Solo soltando esos viejos moldes heredados que hoy nos estancan, podremos gestar un nuevo comienzo sin tantas divisiones.
+                    </p>
+
+                    <div class="bg-jyotish-cobalt text-white p-5 rounded-2xl text-xs sm:text-sm my-4 font-light text-center space-y-2">
+                        <p class="font-semibold text-jyotish-gold">Momento de actuar con diplomacia, pragmatismo y mucha honestidad.</p>
+                        <p>Menos ego y más equidad para construir un futuro tangible. No actuar hoy nos condena a repetir los errores del pasado. La oportunidad es ahora: menos ego y más equipo, tanto en tu casa como en la calle.</p>
+                    </div>
+
+                    <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">
+                        — Andrea B. Menéndez<br>
+                        <span class="text-xs font-sans font-normal text-gray-500">Jyotish Ayni</span>
+                    </p>
+
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                        <span class="text-xs text-gray-500">¿Quieres acompañamiento según los ciclos lunares?</span>
+                        <button onclick="closeArticleModal(); openBookingModal('Seguimiento Ciclos Lunares');" class="bg-jyotish-cobalt text-white text-xs font-semibold px-5 py-3 rounded-full shadow-md hover:bg-jyotish-dark transition-all">
+                            Agendar Consulta con Andrea
+                        </button>
+                    </div>
+                `
+            },
+            2: {
+                title: "Lo Que Nos Dejó la Luna Nueva de Géminis: El Llamado al Servicio",
+                category: "Ritmos Lunares",
+                date: "Columna Radio Mega 91.9",
+                readTime: "5 min de lectura",
+                content: `
+                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Radio Mega 91.9 FM • Andrea B. Menéndez</span>
+                    <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-2">Lo Que Nos Dejó la Luna Nueva de Géminis</h2>
+                    <p class="text-xs text-gray-500 italic mb-4">Una mirada a la Luna Nueva en Géminis y el llamado al servicio por Andrea B. Menéndez — Jyotish Ayni.</p>
+
+                    <p class="font-light leading-relaxed mb-4">
+                        Hoy nos proponemos analizar la realidad que nos tocó vivir bajo la <strong>Luna Nueva en Géminis</strong>, enfocándonos en las energías y propuestas que nos llegaron desde el universo.
+                    </p>
+
+                    <p class="font-light leading-relaxed mb-4">
+                        Desde el inicio, se nos advirtió que atravesaríamos momentos de <em>"todo o nada"</em>. Esta energía ha dificultado la negociación o la posibilidad de encontrar un camino medio. Lo pudimos observar claramente en las reacciones extremas que generó el último partido de la Selección de fútbol: nos movimos en extremos, perdiendo la serenidad y la racionalidad. Este evento fue una muestra de cómo, ante la tensión, caemos fácilmente en el juicio destructivo, la búsqueda de culpables y ese "parloteo interno" cargado de enojo que no construye nada.
+                    </p>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">Del plano individual al social</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        Es fundamental entender que lo que ocurre en la mente individual desborda inevitablemente hacia la arena político-social. En la Argentina de estas semanas, la extrema polarización y la falta de espacios para la mediación se han vuelto tangibles. Ya sea en las calles movilizadas por reclamos sociales o en los debates sobre decisiones macroeconómicas, la Luna Nueva expone un choque directo: la resistencia al cambio frente a la urgencia de la empatía.
+                    </p>
+
+                    <div class="bg-jyotish-soft p-5 rounded-2xl border-l-4 border-jyotish-cobalt text-xs sm:text-sm text-jyotish-cobalt my-4">
+                        "La sabiduría de este ciclo nos enseña que un liderazgo basado en la imposición dogmática ya quedó obsoleto. El verdadero liderazgo —el que construye un camino ético y justo— nace exclusivamente del servicio. Cuando la autoridad se desconecta del sentir colectivo, el resultado es la rigidez y el estancamiento."
+                    </div>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">La respuesta en la comunidad (Zapala y Neuquén)</h3>
+                    <p class="font-light leading-relaxed mb-4">
+                        Sin embargo, no todo es fricción. Mientras el clima político y social se tensa, en Zapala y en toda la provincia de Neuquén nos tocó enfrentar el rigor de las heladas y la nieve. En medio de esas inclemencias, aparece la respuesta que realmente nos saca adelante: <strong>la empatía y la solidaridad comunitaria</strong>.
+                    </p>
+                    <p class="font-light leading-relaxed mb-4">
+                        Ante la adversidad, la salida nunca es encerrarse ni pensar solo en el propio ombligo. Gestos simples como el vecino que limpia la vereda para que otro no se deslice, la organización para despejar rutas o el acompañar a quien pasa frío, son el verdadero motor que sostiene a una sociedad.
+                    </p>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">Una invitación a la reflexión</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        La propuesta de esta Luna Nueva no es intentar cambiar el mundo de un plumazo, sino empezar por nuestra casa y nuestra propia mente:
+                    </p>
+
+                    <ul class="space-y-2 font-light text-xs sm:text-sm my-4">
+                        <li class="bg-jyotish-cream p-3 rounded-xl border border-gray-200 flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-jyotish-gold text-base mt-0.5"></i>
+                            <span><strong>Elegí qué batallas dar:</strong> No todo merece una discusión a muerte. Aprendamos a bajar un cambio al "parloteo" interno y a la necesidad de tener siempre la razón.</span>
+                        </li>
+                        <li class="bg-jyotish-cream p-3 rounded-xl border border-gray-200 flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-jyotish-gold text-base mt-0.5"></i>
+                            <span><strong>Revisá tu empatía:</strong> Escuchar a quien piensa distinto o atraviesa un mal momento nos vuelve más humanos y nos saca del aislamiento.</span>
+                        </li>
+                        <li class="bg-jyotish-cream p-3 rounded-xl border border-gray-200 flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-jyotish-gold text-base mt-0.5"></i>
+                            <span><strong>Apostá al servicio:</strong> Un pequeño gesto de ayuda en la comunidad vale más que mil discursos sobre la libertad o el cambio.</span>
+                        </li>
+                    </ul>
+
+                    <div class="text-right font-serif text-sm text-jyotish-cobalt pt-2">
+                        <p class="font-bold">Andrea B. Menéndez</p>
+                        <p class="text-xs font-sans text-gray-500">Astrología Védica — Radio Mega 91.9 FM Zapala</p>
+                        <a href="https://www.radiomega919zapala.org" target="_blank" class="text-xs text-jyotish-gold font-medium underline">www.radiomega919zapala.org</a>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                        <span class="text-xs text-gray-500">¿Quieres coordinar tu consulta con Andrea?</span>
+                        <button onclick="closeArticleModal(); openBookingModal('Seguimiento Ciclos Lunares');" class="bg-jyotish-cobalt text-white text-xs font-semibold px-5 py-3 rounded-full shadow-md hover:bg-jyotish-dark transition-all">
+                            Agendar Consulta por WhatsApp
+                        </button>
+                    </div>
+                `
+            },
+            3: {
+                title: "El cielo y la tierra: ¿Evolución colectiva o el costo de la rigidez?",
+                category: "Análisis & Coyuntura",
+                date: "Agosto 2026",
+                readTime: "7 min de lectura",
+                content: `
+                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Análisis & Coyuntura • Andrea B. Menéndez</span>
+                    <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-2">El cielo y la tierra: ¿Evolución colectiva o el costo de la rigidez?</h2>
+                    <p class="text-xs text-gray-500 italic mb-4">Análisis de coyuntura, astrología secular y realidades sociales. Por Andrea B. Menéndez — Jyotish Ayni.</p>
+
+                    <p class="font-light leading-relaxed mb-4">
+                        En el constante devenir de la historia, las crisis y las tensiones cotidianas suelen leerse únicamente bajo el lente de la política y la economía. Sin embargo, si nos permitimos un análisis retrospectivo bajo las coordenadas de los ciclos lunares —específicamente observando lo que la reciente Luna Llena en Cáncer proponía y advertía frente a lo que verdaderamente ocurrió en el plano real—, emerge un mapa de aprendizaje humano sumamente revelador.
+                    </p>
+
+                    <p class="font-light leading-relaxed mb-4">
+                        El cosmos nos invitaba a transitar este período desde la curiosidad, la adaptabilidad, el liderazgo benevolente, la vocación de servicio y el respeto irrestricto por los derechos del otro. El reverso de la moneda, aquella advertencia para quienes decidieran no sintonizar con estas frecuencias armónicas, señalaba los peligros del fanatismo, la rigidez cognitiva, la irritabilidad y, como consecuencia inevitable, la confrontación y la desorientación colectiva. Al observar la realidad regional de las últimas semanas, resulta asombroso ver cómo ambos escenarios se materializaron con precisión quirúrgica en distintos niveles de nuestra sociedad.
+                    </p>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">La rigidez en las alturas: El conflicto bilateral</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        En la cúpula del poder político, la resistencia a la adaptabilidad encontró su ejemplo más evidente en las manifestaciones del presidente de Argentina hacia su par brasileño. Este conflicto bilateral exhibió de forma directa una marcada rigidez cognitiva, donde el combate ideológico se priorizó por encima del crucial interés comercial e institucional de ambos Estados.
+                    </p>
+                    <p class="font-light leading-relaxed mb-3">
+                        La retórica de la descalificación terminó por congelar los puentes de diálogo bilateral, deteriorando la estabilidad institucional compartida y profundizando la brecha ideológica en la región. En este nivel de la alta política, la incapacidad de sintonizar con liderazgos más benevolentes e integradores obstaculizó la oportunidad de impulsar un crecimiento espiritual y social conjunto.
+                    </p>
+
+                    <div class="bg-jyotish-soft p-4 rounded-xl border border-gray-200 text-xs my-3 flex items-center gap-2">
+                        <i class="fa-solid fa-link text-jyotish-cobalt text-base"></i>
+                        <span><strong>Fuente de análisis:</strong> <a href="https://chequeado.com/el-explicador/tras-los-insultos-de-milei-el-gobierno-de-brasil-llamo-a-consultas-a-su-embajador-en-argentina-que-significa/#:~:text=Por%20su%20parte%2C%20el%20gobierno%20de%20Lula,representaci%C3%B3n%20diplom%C3%A1tica%20bilateral%20a%20un%20nivel%20comercial." target="_blank" rel="noopener" class="underline text-jyotish-cobalt hover:text-jyotish-gold">Conflicto Diplomático Bilateral (Chequeado) <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></span>
+                    </div>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">El consenso desde abajo: La mediación en la Patagonia</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        Afortunadamente, la búsqueda del bien común y la cohesión social no desaparecieron; por el contrario, encontraron refugio y fuerza en los espacios locales e institucionales de base. El ejemplo más claro de esta sintonía con las energías del diálogo constructivo ha sido la consolidación y expansión de los procedimientos de Mediación Comunitaria e Institucional en la Patagonia.
+                    </p>
+                    <p class="font-light leading-relaxed mb-3">
+                        Eventos como el Encuentro Patagónico de Mediación Comunitaria celebrado en Neuquén, sumados al despliegue de mesas de diálogo en distintas localidades, demuestran que es posible desactivar la confrontación nacida de la hostilidad y la desconfianza. Estos esfuerzos territoriales gestionan las diferencias no mediante la fuerza, sino a través de herramientas institucionales diseñadas específicamente para el bienestar colectivo y el consenso.
+                    </p>
+
+                    <div class="bg-jyotish-soft p-4 rounded-xl border border-gray-200 text-xs my-3 flex items-center gap-2">
+                        <i class="fa-solid fa-link text-jyotish-cobalt text-base"></i>
+                        <span><strong>Fuente de análisis:</strong> <a href="https://www.anbariloche.com.ar/noticias/2026/08/10/113629-familiares-logran-acuerdo-judicial-para-cuidar-a-su-padre-tras-anos-de-conflicto#:~:text=Lo%20que%20durante%20a%C3%B1os%20se%20present%C3%B3%20como,que%20imped%C3%ADan%20cualquier%20tipo%20de%20coordinaci%C3%B3n.%20Publicidad." target="_blank" rel="noopener" class="underline text-jyotish-cobalt hover:text-jyotish-gold">Acuerdos y Mediación Comunitaria en la Patagonia (ANBariloche) <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></span>
+                    </div>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">El barro de la frontera: La lección de Pino Hachado</h3>
+                    <p class="font-light leading-relaxed mb-3">
+                        El escenario más humano y conmovedor de esta dualidad se vivió en el paso internacional Pino Hachado, un territorio donde la hostilidad climática suele dejar varados a cientos de transportistas debido a los temporales de nieve y los cierres de frontera coordinados entre Argentina y Chile. En este microcosmos de emergencia convivieron de manera descarnada las desarmonías, las desconfianzas y la insensibilidad burocrática, frente a frente con el surgimiento genuino de la solidaridad humana.
+                    </p>
+                    <p class="font-light leading-relaxed mb-4">
+                        Pino Hachado nos demostró que las crisis obligan a desmontar las posturas rígidas y el individualismo estéril. Aunque las tensiones cotidianas y los roces iniciales parecían dictados por la desconfianza del papeleo aduanero, la imposibilidad de resolver la emergencia de forma aislada forzó a los actores a activar un diálogo puramente operativo y una profunda empatía. Al final del día, el bien común no demostró ser el resultado automático de un frío tratado internacional, sino de la capacidad real de personas e instituciones para sentarse a resolver la urgencia del "otro" en el territorio.
+                    </p>
+
+                    <div class="bg-jyotish-soft p-4 rounded-xl border border-gray-200 text-xs my-3 flex items-center gap-2">
+                        <i class="fa-solid fa-radio text-jyotish-cobalt text-base"></i>
+                        <span><strong>Medio de referencia:</strong> <a href="https://www.radiomega919zapala.org" target="_blank" rel="noopener" class="underline text-jyotish-cobalt hover:text-jyotish-gold">Radio Mega 91.9 Zapala <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a></span>
+                    </div>
+
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">Una encrucijada evolutiva</h3>
+                    <p class="font-light leading-relaxed mb-4">
+                        La panorámica de los acontecimientos recientes nos deja una lección contundente: el universo nos propone constantemente herramientas para evolucionar hacia un mundo más empático. No obstante, la decisión final sigue estando en nuestras manos. Resistirnos a esa corriente de entendimiento mutuo solo genera más caos a nuestro alrededor, estancando tanto nuestro desarrollo personal como nuestra evolución social.
+                    </p>
+
+                    <div class="bg-jyotish-cobalt text-white p-5 rounded-2xl text-xs sm:text-sm my-4 font-light text-center space-y-2">
+                        <p class="font-semibold text-jyotish-gold text-sm sm:text-base">La pregunta que queda flotando en el aire de este diario digital es sencilla:</p>
+                        <p class="italic text-base">Ante la próxima crisis, ¿elegiremos el puente de la empatía o el muro de la rigidez?</p>
+                    </div>
+
+                    <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">
+                        — Andrea B. Menéndez<br>
+                        <span class="text-xs font-sans font-normal text-gray-500">Astrología Védica & Análisis Secular</span>
+                    </p>
+
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                        <span class="text-xs text-gray-500">¿Quieres coordinar tu consulta con Andrea?</span>
+                        <button onclick="closeArticleModal(); openBookingModal('Carta Natal Védica');" class="bg-jyotish-cobalt text-white text-xs font-semibold px-5 py-3 rounded-full shadow-md hover:bg-jyotish-dark transition-all">
+                            Agendar Consulta por WhatsApp
+                        </button>
+                    </div>
+                `
+            }
+        };
+
+        // Lógica Modal WhatsApp
+        const modal = document.getElementById('bookingModal');
+        const modalContent = document.getElementById('bookingModalContent');
+        const modalSelect = document.getElementById('modalService');
+
+        function openBookingModal(serviceName) {
+            if (serviceName && modalSelect) {
+                for (let option of modalSelect.options) {
+                    if (option.value.toLowerCase().includes(serviceName.toLowerCase()) || serviceName.toLowerCase().includes(option.value.toLowerCase())) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeBookingModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeBookingModal();
+        });
+
+        // Lógica Modal Lector de Artículos
+        const articleModal = document.getElementById('articleModal');
+        const articleModalContent = document.getElementById('articleModalContent');
+        const articleBody = document.getElementById('articleBody');
+
+        function openArticleModal(articleId) {
+            const article = articles[articleId];
+            if (article && articleBody) {
+                articleBody.innerHTML = article.content;
+                articleModal.classList.remove('opacity-0', 'pointer-events-none');
+                articleModalContent.classList.remove('scale-95');
+                articleModalContent.classList.add('scale-100');
+            }
+        }
+
+        function closeArticleModal() {
+            articleModal.classList.add('opacity-0', 'pointer-events-none');
+            articleModalContent.classList.remove('scale-100');
+            articleModalContent.classList.add('scale-95');
+        }
+
+        articleModal.addEventListener('click', (e) => {
+            if (e.target === articleModal) closeArticleModal();
+        });
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const service = document.getElementById('modalService').value;
+            const name = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const modalidad = document.querySelector('input[name="modalidad"]:checked').value;
+
+            const message = `Hola Andrea! Mi nombre es ${name} (Email: ${userEmail}). Me gustaría solicitar un turno para la consulta de *${service}* en modalidad *${modalidad}*. ¡Muchas gracias!`;
+            const encoded = encodeURIComponent(message);
+            
+            window.open(`https://wa.me/5492942408229?text=${encoded}`, '_blank');
+            closeBookingModal();
+        }
+    </script>
+</body>
+</html>
