@@ -6,16 +6,22 @@ media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  - name: "articulos"
-    label: "Artículos & Bitácora"
-    folder: "_posts/articulos"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Título del Artículo", name: "title", widget: "string" }
-      - { label: "Fecha de Publicación", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
-      - { label: "Categoría", name: "category", widget: "select", options: ["Astrología Védica", "Análisis & Coyuntura", "Radio Mega 91.9", "Ritmos Lunares"] }
-      - { label: "Tiempo de Lectura", name: "readTime", widget: "string", default: "5 min de lectura" }
-      - { label: "Imagen Destacada", name: "image", widget: "image", required: false }
-      - { label: "Resumen Corto", name: "summary", widget: "text" }
-      - { label: "Contenido Completo", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Bitácora & Artículos"
+    files:
+      - label: "Artículos Publicados"
+        name: "articulos"
+        file: "articulos.json"
+        fields:
+          - label: "Lista de Artículos"
+            name: "lista"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}} - {{fields.date}})"
+            fields:
+              - { label: "Título del Artículo", name: "title", widget: "string" }
+              - { label: "Fecha de Publicación", name: "date", widget: "string", default: "Agosto 2026" }
+              - { label: "Categoría", name: "category", widget: "select", options: ["Astrología Védica", "Análisis & Coyuntura", "Radio Mega 91.9", "Ritmos Lunares"] }
+              - { label: "Tiempo de Lectura", name: "readTime", widget: "string", default: "5 min de lectura" }
+              - { label: "Imagen Destacada (o URL)", name: "image", widget: "image", required: false }
+              - { label: "Resumen Corto (para la tarjeta)", name: "summary", widget: "text" }
+              - { label: "Contenido Completo de la Nota", name: "body", widget: "markdown" }
