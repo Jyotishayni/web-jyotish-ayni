@@ -486,13 +486,14 @@
 
                 <div class="flex flex-wrap justify-center gap-2 pt-2" id="blogFilters">
                     <button data-bfilter="all" class="blog-filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm cursor-pointer">Todos los Artículos</button>
+                    <button data-bfilter="ritmos" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Ritmos Lunares</button>
                     <button data-bfilter="astrologia" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Astrología Védica</button>
                     <button data-bfilter="coyuntura" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Análisis & Coyuntura</button>
-                    <button data-bfilter="ritmos" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Radio Mega 91.9</button>
+                    <button data-bfilter="radio" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Radio Mega 91.9</button>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="articlesGrid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
                 </div>
         </div>
     </section>
@@ -536,7 +537,7 @@
                             Este nuevo ciclo lunar nos propone un desafío ambicioso: examinar las leyes y estructuras que nos gobiernan tanto afuera como adentro. Es tiempo de vencer el individualismo egocéntrico y reconocer que la sanación personal es el pilar de nuestra evolución social.
                         </p>
                         <div class="pt-4 flex flex-wrap gap-3">
-                            <button onclick="openArticleModal('art-luna-nueva-cancer')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-xs sm:text-sm px-5 py-3 rounded-full transition-all shadow-md flex items-center gap-2 cursor-pointer">
+                            <button onclick="openArticleModal('art-luna-nueva-cancer-20')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-xs sm:text-sm px-5 py-3 rounded-full transition-all shadow-md flex items-center gap-2 cursor-pointer">
                                 <i class="fa-solid fa-book-open text-base"></i>
                                 <span>Leer Reflexión Completa</span>
                             </button>
@@ -698,40 +699,52 @@
     </div>
 
     <script>
-        // 1. BASE DE DATOS DE ARTÍCULOS COMPLETOS (TEXTO ÍNTEGRO DE ANDREA)
+        function normalizeImageUrl(path) {
+            if (!path) return 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800';
+            if (path.startsWith('http://') || path.startsWith('https://')) return path;
+            if (path.startsWith('/')) return '.' + path;
+            return './' + path;
+        }
+
+        function formatMarkdownToHtml(md) {
+            if (!md) return '';
+            let text = md.trim();
+            text = text.replace(/^### (.*$)/gim, '<h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">$1</h3>');
+            text = text.replace(/^## (.*$)/gim, '<h2 class="font-serif font-bold text-xl text-jyotish-cobalt pt-3 mb-2">$1</h2>');
+            text = text.replace(/^# (.*$)/gim, '<h1 class="font-serif font-bold text-2xl text-jyotish-cobalt pt-3 mb-2">$1</h1>');
+            text = text.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+            text = text.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+            text = text.replace(/^> (.*$)/gim, '<blockquote class="bg-jyotish-soft p-4 rounded-xl border-l-4 border-jyotish-gold text-xs sm:text-sm text-jyotish-dark my-4">$1</blockquote>');
+            text = text.replace(/\n\n+/gim, '</p><p class="font-light leading-relaxed mb-4">');
+            text = text.replace(/\n/gim, '<br>');
+            return '<p class="font-light leading-relaxed mb-4">' + text + '</p>';
+        }
+
+        // 1. BASE DE DATOS DE ARTÍCULOS COMPLETOS DE ANDREA
         const initialArticles = [
             {
-                id: "art-luna-nueva-cancer",
-                title: "Luna Nueva de Cáncer: Sanar el Ego y el Llamado al Servicio",
-                category: "Astrología Védica",
-                badge: "✨ Ciclo Activo",
+                id: "art-luna-nueva-cancer-20",
+                title: "Luna Nueva de Cáncer: De la transformación más íntima de nuestro ser hacia la evolución de toda la sociedad.",
+                category: "Ritmos Lunares",
+                badge: "✨ Publicación Reciente",
                 badgeClass: "bg-jyotish-gold text-jyotish-dark",
-                date: "12 Ago 2026 - 14:37 hs",
-                readTime: "6 min de lectura",
-                image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
-                summary: "Reflexión sobre la transformación individual y social. El desafío de romper las cadenas del individualismo y construir desde la compasión y la ética.",
+                date: "20 Ago 2026",
+                readTime: "2 min de lectura",
+                image: normalizeImageUrl("/assets/uploads/luna_nueva_en_cáncer_2026.png"),
+                summary: "Este ciclo lunar nos desafía a romper las cadenas del egoísmo y a asumir un rol público basado en la ética, la igualdad y la fraternidad, entendiendo que la profundidad de nuestra sanación interna será la medida de nuestra verdadera evolución colectiva.",
                 content: `
-                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Astrología Védica • Andrea B. Menéndez</span>
-                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-3">LUNA NUEVA DE CÁNCER</h2>
-                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">12 de Agosto de 2026 - 14:37 hs • 6 min de lectura</div>
+                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Ritmos Lunares • Andrea B. Menéndez</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-3">Luna Nueva de Cáncer: De la transformación más íntima de nuestro ser hacia la evolución de toda la sociedad.</h2>
+                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">20 de Agosto de 2026 • 2 min de lectura</div>
                     
-                    <p class="font-light leading-relaxed mb-4 text-gray-600 italic">Buenos días, hoy vamos a hablar de la Luna Nueva de Cáncer desde la mirada de la Jyotisha.</p>
-                    <p class="font-light leading-relaxed mb-4">Les propongo detenernos un momento para reflexionar sobre el clima colectivo que estamos atravesando. Este nuevo ciclo lunar que iniciamos nos propone un desafío ambicioso: <strong>una transformación que va desde lo más íntimo de nuestro ser hasta las estructuras mismas de nuestra sociedad</strong>.</p>
+                    <p class="font-light leading-relaxed mb-4 text-gray-600 italic">¡Buenos días! Hoy nos detenemos un momento para reflexionar sobre el clima colectivo que estamos atravesando, contemplándolo a través de la lente de la <strong>Jyotisha</strong> (la astrología védica sideral).</p>
+                    <p class="font-light leading-relaxed mb-4">El <strong>12 de agosto de 2026, a las 14:37 hs</strong>, iniciamos el ciclo de la <strong>Luna Nueva de Cáncer</strong>. Este nuevo punto de partida nos propone un desafío sumamente ambicioso: una transformación profunda que se despliega desde lo más íntimo de nuestro ser para sacudir las estructuras mismas de nuestra sociedad.</p>
                     
-                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">1. Investigación profunda y sombras internas</h3>
-                    <p class="font-light leading-relaxed mb-3">Se nos invita a una investigación profunda, a buscar la verdad desnuda que se esconde detrás de las apariencias. Es un momento propicio para examinar las leyes y las estructuras que nos gobiernan, tanto afuera en lo institucional como adentro en nuestros propios mandatos, yendo directamente a la raíz de lo que nos rige.</p>
-                    <p class="font-light leading-relaxed mb-4">El principal enemigo a enfrentar en este tránsito es el <strong>individualismo egocéntrico</strong>. Debemos estar sumamente alertas a nuestras 'sombras' internas: esos pensamientos limitantes y miedos inconscientes que nos mantienen paralizados en una falsa sensación de seguridad material. La clave reside en no huir de estas incomodidades, sino iluminarlas con consciencia para integrarlas.</p>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">Investigar la raíz de nuestras leyes internas</h3>
+                    <p class="font-light leading-relaxed mb-3">Este ciclo nos invita a mirar sin filtros. Se nos pide investigar la verdad desnuda de las normas y leyes que nos rigen, tanto afuera en lo social como adentro en nuestros propios mandatos familiares. Debemos romper las cadenas del egoísmo y el miedo a la escasez material para poder sanar.</p>
 
-                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">2. Nuevas formas de vincularnos</h3>
-                    <p class="font-light leading-relaxed mb-3">En cuanto al ámbito de nuestros vínculos y relaciones interpersonales, la energía cósmica actual nos empuja con fuerza a experimentar y construir nuevas formas de interactuar. Es tiempo de dar cierre definitivo a patrones obsoletos de manipulación, dependencia o reactividad, y enfrentar las tensiones cotidianas desde un espacio de auténtica honestidad, vulnerabilidad y empatía mutua.</p>
-
-                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">3. Nuestro rol público y la sanación ética</h3>
-                    <p class="font-light leading-relaxed mb-4">Por último, este ciclo nos convoca a asumir con madurez nuestro rol público y social. Se nos invita a iniciar y sostener proyectos que realmente aporten valor y contención a la comunidad, asumiendo nuestro lugar como puentes activos y conscientes entre las lecciones del pasado y las posibilidades del futuro. La profundidad y sinceridad de nuestra sanación interna será la medida exacta de nuestra verdadera evolución colectiva.</p>
-
-                    <div class="bg-jyotish-cobalt text-white p-5 rounded-2xl text-xs sm:text-sm my-5 font-light text-center space-y-2">
-                        <p class="font-semibold text-jyotish-gold text-base">Luna Nueva de Cáncer</p>
-                        <p class="italic text-base">"La profundidad de nuestra sanación interna será la medida de nuestra verdadera evolución colectiva."</p>
-                    </div>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">Construir puentes desde la empatía</h3>
+                    <p class="font-light leading-relaxed mb-4">En nuestros vínculos cotidianos, es momento de superar la frialdad y el cálculo para encontrarnos desde una fraternidad sincera. La sanación que hagamos en silencio en nuestro corazón será el faro que transforme nuestro entorno.</p>
 
                     <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">— Andrea B. Menéndez<br><span class="text-xs font-sans font-normal text-gray-500">Astrología Védica — Jyotish Ayni</span></p>
 
@@ -860,6 +873,14 @@
 
         let allArticles = [...initialArticles];
 
+        function getCategoryFilter(cat) {
+            const c = (cat || '').toLowerCase();
+            if (c.includes('coyuntura') || c.includes('análisis') || c.includes('analisis')) return 'coyuntura';
+            if (c.includes('radio')) return 'radio';
+            if (c.includes('lunar') || c.includes('ritmo') || c.includes('luna')) return 'ritmos';
+            return 'astrologia';
+        }
+
         // 2. RENDERIZADO DE ARTÍCULOS EN LA PÁGINA
         function renderArticlesGrid() {
             const grid = document.getElementById('articlesGrid');
@@ -867,23 +888,19 @@
             grid.innerHTML = '';
 
             allArticles.forEach(art => {
-                let catFilter = 'astrologia';
-                const cLower = (art.category || '').toLowerCase();
-                if (cLower.includes('coyuntura') || cLower.includes('análisis') || cLower.includes('analisis')) catFilter = 'coyuntura';
-                else if (cLower.includes('radio')) catFilter = 'ritmos';
-
+                const catFilter = getCategoryFilter(art.category);
                 const card = document.createElement('article');
                 card.className = 'blog-card bg-jyotish-cream rounded-3xl overflow-hidden border border-gray-200 card-shadow flex flex-col justify-between';
                 card.setAttribute('data-bcategory', catFilter);
 
-                const imgUrl = art.image || 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800';
+                const imgUrl = normalizeImageUrl(art.image);
                 const badgeTxt = art.badge || art.category;
                 const badgeCls = art.badgeClass || 'bg-jyotish-cobalt text-white';
 
                 card.innerHTML = `
                     <div>
                         <div class="relative h-48 overflow-hidden bg-jyotish-dark">
-                            <img src="${imgUrl}" alt="${art.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <img src="${imgUrl}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800';" alt="${art.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                             <span class="absolute top-3 left-3 ${badgeCls} text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                                 ${badgeTxt}
                             </span>
@@ -909,55 +926,107 @@
             });
         }
 
-        // 3. LECTOR DINÁMICO DE ARCHIVOS JSON/MARKDOWN DEL REPOSITORIO
+        // 3. PARSER DINÁMICO DE ARCHIVOS .MD Y .JSON DE GITHUB
+        function parseMarkdownFrontmatter(rawText) {
+            let meta = {};
+            let body = rawText;
+            if (rawText.startsWith('---')) {
+                const parts = rawText.split('---');
+                if (parts.length >= 3) {
+                    const yaml = parts[1];
+                    body = parts.slice(2).join('---').trim();
+                    yaml.split('\n').forEach(line => {
+                        const colon = line.indexOf(':');
+                        if (colon !== -1) {
+                            const key = line.slice(0, colon).trim();
+                            let val = line.slice(colon + 1).trim();
+                            if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+                                val = val.slice(1, -1);
+                            }
+                            meta[key] = val;
+                        }
+                    });
+                }
+            }
+            return { meta, body };
+        }
+
         async function fetchExternalPosts() {
             try {
-                const endpoints = [
-                    'https://api.github.com/repos/jyotishayni/web-jyotish-ayni/contents/_posts/articulos',
-                    'https://api.github.com/repos/jyotishayni/web-jyotish-ayni/contents/articulos',
-                    'https://api.github.com/repos/jyotishayni/web-jyotish-ayni/contents/json'
-                ];
+                // Leer articulos.json si existe en la raíz
+                try {
+                    const resJson = await fetch('./articulos.json');
+                    if (resJson.ok) {
+                        const items = await resJson.json();
+                        const list = Array.isArray(items) ? items : (items.articulos || []);
+                        list.forEach(p => {
+                            if (p.title && !allArticles.some(a => a.title.trim().toLowerCase() === p.title.trim().toLowerCase())) {
+                                allArticles.unshift({
+                                    id: 'json-' + Math.random().toString(36).substr(2, 9),
+                                    title: p.title,
+                                    category: p.category || 'Astrología Védica',
+                                    badge: p.category || 'Astrología Védica',
+                                    badgeClass: 'bg-jyotish-cobalt text-white',
+                                    date: p.date || 'Reciente',
+                                    readTime: p.readTime || '5 min de lectura',
+                                    image: normalizeImageUrl(p.image),
+                                    summary: p.summary || p.description || '',
+                                    content: `
+                                        <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">${p.category || 'Astrología Védica'} • Andrea B. Menéndez</span>
+                                        <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-3">${p.title}</h2>
+                                        <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">${p.date || ''} • ${p.readTime || ''}</div>
+                                        <div class="text-gray-700 leading-relaxed font-light space-y-4">${formatMarkdownToHtml(p.body || p.content || '')}</div>
+                                    `
+                                });
+                            }
+                        });
+                        renderArticlesGrid();
+                    }
+                } catch(e) {}
 
-                for (let url of endpoints) {
-                    const res = await fetch(url);
-                    if (res.ok) {
-                        const files = await res.json();
-                        if (Array.isArray(files)) {
-                            for (let file of files) {
-                                if (file.name.endsWith('.json')) {
-                                    const rawRes = await fetch(file.download_url);
-                                    if (rawRes.ok) {
-                                        const postData = await rawRes.json();
-                                        if (postData.title && !allArticles.some(a => a.title === postData.title)) {
-                                            allArticles.push({
-                                                id: 'ext-' + file.name,
-                                                title: postData.title,
-                                                category: postData.category || 'Astrología Védica',
-                                                date: postData.date || 'Reciente',
-                                                readTime: postData.readTime || '5 min de lectura',
-                                                image: postData.image || 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800',
-                                                summary: postData.summary || '',
-                                                content: `
-                                                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">${postData.category || 'Astrología Védica'} • Andrea B. Menéndez</span>
-                                                    <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-3">${postData.title}</h2>
-                                                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">${postData.date || ''} • ${postData.readTime || ''}</div>
-                                                    <div class="text-gray-700 leading-relaxed font-light space-y-4">${postData.body || postData.content || ''}</div>
-                                                `
-                                            });
-                                        }
+                // Leer archivos .md de GitHub _posts/articulos
+                const ghApi = 'https://api.github.com/repos/jyotishayni/web-jyotish-ayni/contents/_posts/articulos';
+                const resGh = await fetch(ghApi);
+                if (resGh.ok) {
+                    const files = await resGh.json();
+                    if (Array.isArray(files)) {
+                        for (let file of files) {
+                            if (file.name.endsWith('.md')) {
+                                const rawRes = await fetch(file.download_url);
+                                if (rawRes.ok) {
+                                    const rawText = await rawRes.text();
+                                    const { meta, body } = parseMarkdownFrontmatter(rawText);
+                                    if (meta.title && !allArticles.some(a => a.title.trim().toLowerCase() === meta.title.trim().toLowerCase())) {
+                                        allArticles.unshift({
+                                            id: 'md-' + file.name,
+                                            title: meta.title,
+                                            category: meta.category || 'Ritmos Lunares',
+                                            badge: meta.category || 'Ritmos Lunares',
+                                            badgeClass: 'bg-jyotish-gold text-jyotish-dark',
+                                            date: meta.date || 'Reciente',
+                                            readTime: meta.readTime || '3 min de lectura',
+                                            image: normalizeImageUrl(meta.image),
+                                            summary: meta.summary || '',
+                                            content: `
+                                                <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">${meta.category || 'Ritmos Lunares'} • Andrea B. Menéndez</span>
+                                                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-3">${meta.title}</h2>
+                                                <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">${meta.date || ''} • ${meta.readTime || ''}</div>
+                                                <div class="text-gray-700 leading-relaxed font-light space-y-4">${formatMarkdownToHtml(body)}</div>
+                                            `
+                                        });
                                     }
                                 }
                             }
-                            renderArticlesGrid();
                         }
+                        renderArticlesGrid();
                     }
                 }
             } catch (err) {
-                console.log("Modo estático activo");
+                console.log("Artículos cargados de forma local");
             }
         }
 
-        // Renderizado inicial
+        // Inicialización
         renderArticlesGrid();
         fetchExternalPosts();
 
