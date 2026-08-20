@@ -95,7 +95,7 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <button onclick="openBookingModal('General')" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white font-medium text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                <button onclick="openBookingModal('General')" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white font-medium text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer">
                     <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
                     <span>Agendar Turno</span>
                 </button>
@@ -134,7 +134,7 @@
                     </p>
 
                     <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <button onclick="openBookingModal('Carta Natal Védica')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        <button onclick="openBookingModal('Carta Natal Védica')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer">
                             <i class="fa-brands fa-whatsapp text-lg text-emerald-800"></i>
                             <span>Agendar Turno por WhatsApp</span>
                         </button>
@@ -211,10 +211,10 @@
                 <span class="text-jyotish-cobalt uppercase text-xs font-bold tracking-widest bg-white px-3.5 py-1 rounded-full shadow-sm border border-gray-100">Atención Personalizada</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-bold text-jyotish-cobalt">Procesos de Acompañamiento Individual</h2>
                 <div class="flex flex-wrap justify-center gap-2 pt-4" id="serviceFilters">
-                    <button data-filter="all" class="filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm">Todos</button>
-                    <button data-filter="astrologia" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">Astrología Védica</button>
-                    <button data-filter="salud" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">Astromedicina</button>
-                    <button data-filter="terapias" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200">Terapias</button>
+                    <button data-filter="all" class="filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer">Todos</button>
+                    <button data-filter="astrologia" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200 cursor-pointer">Astrología Védica</button>
+                    <button data-filter="salud" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200 cursor-pointer">Astromedicina</button>
+                    <button data-filter="terapias" class="filter-btn bg-white hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all border border-gray-200 cursor-pointer">Terapias</button>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@
                     </div>
                     <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-500">Sesión Individual</span>
-                        <button onclick="openBookingModal('Carta Natal Védica')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                        <button onclick="openBookingModal('Carta Natal Védica')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1 cursor-pointer"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
                     </div>
                 </div>
 
@@ -237,7 +237,7 @@
                     </div>
                     <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-500">Anual</span>
-                        <button onclick="openBookingModal('Revolución Solar Védica')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                        <button onclick="openBookingModal('Revolución Solar Védica')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1 cursor-pointer"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
                     </div>
                 </div>
 
@@ -248,7 +248,7 @@
                     </div>
                     <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between">
                         <span class="text-xs text-gray-500">Salud Holística</span>
-                        <button onclick="openBookingModal('Astromedicina & Ayurveda')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                        <button onclick="openBookingModal('Astromedicina & Ayurveda')" class="text-jyotish-cobalt font-bold text-xs uppercase flex items-center gap-1 cursor-pointer"><span>Agendar</span> <i class="fa-solid fa-chevron-right text-[10px]"></i></button>
                     </div>
                 </div>
             </div>
@@ -263,10 +263,10 @@
                 <p class="text-gray-600 text-base font-light">Enseñanzas sobre el mandala sideral, reflexiones de coyuntura y columnas de radio.</p>
 
                 <div class="flex flex-wrap justify-center gap-2 pt-2" id="blogFilters">
-                    <button data-bfilter="all" class="blog-filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm">Todos los Artículos</button>
-                    <button data-bfilter="astrologia" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">Astrología Védica</button>
-                    <button data-bfilter="coyuntura" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">Análisis & Coyuntura</button>
-                    <button data-bfilter="ritmos" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200">Radio Mega 91.9</button>
+                    <button data-bfilter="all" class="blog-filter-btn bg-jyotish-cobalt text-white px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm cursor-pointer">Todos los Artículos</button>
+                    <button data-bfilter="astrologia" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Astrología Védica</button>
+                    <button data-bfilter="coyuntura" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Análisis & Coyuntura</button>
+                    <button data-bfilter="ritmos" class="blog-filter-btn bg-jyotish-cream hover:bg-jyotish-soft text-gray-700 px-4 py-2 rounded-full text-xs font-medium transition-all border border-gray-200 cursor-pointer">Radio Mega 91.9</button>
                 </div>
             </div>
 
@@ -301,7 +301,7 @@
                         <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">De la transformación íntima a la evolución colectiva</h3>
                         <p class="text-jyotish-soft text-sm sm:text-base leading-relaxed font-light">Este ciclo nos convoca a sanar el ego para asumir el rol público basado en la ética y el servicio al bien común.</p>
                         <div class="pt-4 flex flex-wrap gap-3">
-                            <button onclick="openBookingModal('Seguimiento Ciclos Lunares')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-xs sm:text-sm px-5 py-3 rounded-full transition-all flex items-center gap-2">
+                            <button onclick="openBookingModal('Seguimiento Ciclos Lunares')" class="bg-jyotish-gold hover:bg-jyotish-goldhover text-jyotish-dark font-semibold text-xs sm:text-sm px-5 py-3 rounded-full transition-all flex items-center gap-2 cursor-pointer">
                                 <i class="fa-brands fa-whatsapp text-emerald-800 text-base"></i>
                                 <span>Consultar por WhatsApp</span>
                             </button>
@@ -314,7 +314,7 @@
 
     <div id="bookingModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300" id="bookingModalContent">
-            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors cursor-pointer">
                 <i class="fa-solid fa-xmark text-base"></i>
             </button>
 
@@ -366,7 +366,7 @@
                 </div>
 
                 <div class="pt-2">
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm cursor-pointer">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Enviar Solicitud por WhatsApp</span>
                     </button>
@@ -377,7 +377,7 @@
 
     <div id="articleModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl relative transform scale-95 transition-transform duration-300" id="articleModalContent">
-            <button onclick="closeArticleModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-9 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors">
+            <button onclick="closeArticleModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 w-9 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-colors cursor-pointer">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <div id="articleBody" class="space-y-6 text-gray-700 text-sm sm:text-base leading-relaxed"></div>
@@ -385,12 +385,12 @@
     </div>
 
     <script>
-        // Limpieza de hash de invitación para evitar bloqueos
+        // Limpieza de hash de invitación
         if (window.location.hash && (window.location.hash.includes('invite_token') || window.location.hash.includes('access_token'))) {
             history.replaceState(null, null, ' ');
         }
 
-        // Redirección a /admin/ si inicia sesión
+        // Redirección al loguear
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
         }
@@ -417,7 +417,7 @@
             });
         });
 
-        // Artículos Base Garantizados
+        // Artículos Garantizados
         const defaultArticles = [
             {
                 title: "Luna Nueva de Cáncer: Sanar el Ego y el Llamado al Servicio",
@@ -426,7 +426,7 @@
                 readTime: "6 min de lectura",
                 image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
                 summary: "Reflexión sobre la transformación individual y social. El desafío de romper las cadenas del individualismo y construir desde la compasión y la ética.",
-                body: "Buenos días, hoy vamos a hablar de la Luna Nueva de Cáncer desde la mirada de la Jyotisha.\n\nEste nuevo ciclo lunar que iniciamos nos propone un desafío ambicioso: una transformación que va desde lo más íntimo de nuestro ser hasta las estructuras mismas de nuestra sociedad.\n\n### 1. Investigación profunda y sombras internas\nSe nos invita a una investigación profunda, a buscar la verdad desnuda que se esconde detrás de las apariencias. Es momento de examinar las leyes que nos gobiernan, yendo a la raíz.\n\n### 2. Nuevas formas de vincularnos\nLa energía actual nos empuja a experimentar nuevas formas de interactuar. Es tiempo de finalizar patrones obsoletos y actuar con autenticidad y empatía.\n\n### 3. Rol público y sanación ética\nMomento de actuar con seriedad y responsabilidad, asumiendo nuestro lugar como puentes activos entre el pasado y el futuro."
+                body: "Buenos días, hoy vamos a hablar de la Luna Nueva de Cáncer desde la mirada de la Jyotisha.\n\nEste nuevo ciclo lunar nos propone un desafío ambicioso: una transformación que va desde lo más íntimo de nuestro ser hasta las estructuras mismas de nuestra sociedad.\n\n### 1. Investigación profunda y sombras internas\nSe nos invita a una investigación profunda, a buscar la verdad desnuda que se esconde detrás de las apariencias. Es momento de examinar las leyes que nos gobiernan, yendo a la raíz.\n\n### 2. Nuevas formas de vincularnos\nLa energía actual nos empuja a experimentar nuevas formas de interactuar. Es tiempo de finalizar patrones obsoletos y actuar con autenticidad y empatía.\n\n### 3. Rol público y sanación ética\nMomento de actuar con seriedad y responsabilidad, asumiendo nuestro lugar como puentes activos entre el pasado y el futuro."
             },
             {
                 title: "El cielo y la tierra: ¿Evolución colectiva o el costo de la rigidez?",
@@ -496,7 +496,7 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openArticleModal(${index})" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-2.5 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2">
+                        <button onclick="openArticleModal(${index})" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-2.5 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 cursor-pointer">
                             <span>Leer Artículo Completo</span>
                             <i class="fa-solid fa-book-open text-[10px]"></i>
                         </button>
@@ -573,7 +573,7 @@
                 <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">${art.date} • ${art.readTime || '5 min de lectura'}</div>
                 <div class="prose max-w-none text-gray-700"><p class="font-light leading-relaxed mb-4">${formattedBody}</p></div>
                 <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
-                    <button onclick="closeArticleModal(); openBookingModal('Carta Natal Védica');" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white text-xs font-semibold px-5 py-3 rounded-full transition-all">
+                    <button onclick="closeArticleModal(); openBookingModal('Carta Natal Védica');" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white text-xs font-semibold px-5 py-3 rounded-full transition-all cursor-pointer">
                         Agendar Consulta con Andrea por WhatsApp
                     </button>
                 </div>
