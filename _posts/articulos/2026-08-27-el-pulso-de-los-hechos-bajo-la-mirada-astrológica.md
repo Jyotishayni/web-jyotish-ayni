@@ -38,10 +38,8 @@ Para lograrlo, es indispensable mirar las estructuras sociales que nos sostienen
 
  Nota: las publicaciones mencionadas por la astróloga se encuentran en los siguientes links:
 
--        [La historia que necesitamos volver a contar](https://www.radiomega919zapala.org/2026/08/la-historia-que-necesitamos-volver.html)
+- [La historia que necesitamos volver a contar]((https://www.radiomega919zapala.org/2026/08/la-historia-que-necesitamos-volver.html).
+- [Senado: la libertad avanza busca dictaminar el Súper RIGI en una jornada clave cruzada por los pedidos de los aliados](https://www.rionegro.com.ar/politica/senado-la-libertad-avanza-busca-dictaminar-el-super-rigi-en-una-jornada-clave-cruzada-por-pedidos-de-los-aliados-4695848/).
+- [Reciben sin hacer nada: Rolando Figueroa encabezó el  Neuquén Day y reclamó por la coparticipción](https://www.rionegro.com.ar/politica/reciben-sin-hacer-nada-rolando-figueroa-encabezo-el-neuquen-day-y-reclamo-por-la-coparticipacion-4694914/). 
 
--         [Senado: la libertad avanza busca dictaminar el Súper RIGI en una jornada clave cruzada por pedidos de los aliados](https://www.rionegro.com.ar/politica/senado-la-libertad-avanza-busca-dictaminar-el-super-rigi-en-una-jornada-clave-cruzada-por-pedidos-de-los-aliados-4695848/)
-
--        [ Reciben sin hacer nada»: Rolando Figueroa encabezó el Neuquén Day y reclamó por la coparticipación](https://www.rionegro.com.ar/politica/reciben-sin-hacer-nada-rolando-figueroa-encabezo-el-neuquen-day-y-reclamo-por-la-coparticipacion-4694914/)
-
-Si querés leer esta  nota  en la web de la radio hacé [click aquí](https://www.radiomega919zapala.org/2026/08/el-pulso-de-los-hechos-bajo-la-mirada.html).
+Si querés leer esta  nota  en la web de la radio hacé click [aquí.](https://www.radiomega919zapala.org/2026/08/el-pulso-de-los-hechos-bajo-la-mirada.html)
