@@ -1,7 +1,7 @@
 ---
 title: 'Luna Llena de Leo: Sanar el ego para construir en comunidad'
 date: 28 Ago 2026
-category: Astrología Védica
+category: Ritmos Lunares
 readTime: 4 min de lectura
 image: /assets/uploads/luna llena leo 12 ago 26-Cover.jpg
 video: https://youtu.be/GjFeiCV7Pbk
