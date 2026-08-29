@@ -736,24 +736,40 @@
         }
 
         // CONVERSOR DE FORMATO MARKDOWN A HTML (LINKS, TÍTULOS, CITAS)
-        function formatMarkdownToHtml(md) {
+function formatMarkdownToHtml(md) {
             if (!md) return '';
             let text = md.trim();
-            
-            // Convierte [Texto](Link) en links clickeables que abren en pestaña nueva
-            text = text.replace(/\[(.*?)\]\((https?:\/\/[^\s\)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener" class="text-jyotish-cobalt hover:text-jyotish-gold underline font-semibold transition-colors">$1</a>');
-            
-            // Encabezados
+
+            // 1. Repara y convierte links de Markdown incluso con saltos de línea, espacios o dobles paréntesis
+            text = text.replace(/\[([\s\S]*?)\]\s*\(+\s*(https?:\/\/[^\s\)\>]+)\s*\)+/gim, function(match, label, url) {
+                const cleanUrl = url.replace(/[\.\,\;\)]+$/, '');
+                return `<a href="${cleanUrl}" target="_blank" rel="noopener" class="text-jyotish-cobalt hover:text-jyotish-gold underline font-semibold transition-colors">${label.trim()}</a>`;
+            });
+
+            // 2. Encabezados
             text = text.replace(/^### (.*$)/gim, '<h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">$1</h3>');
             text = text.replace(/^## (.*$)/gim, '<h2 class="font-serif font-bold text-xl text-jyotish-cobalt pt-3 mb-2">$1</h2>');
             text = text.replace(/^# (.*$)/gim, '<h1 class="font-serif font-bold text-2xl text-jyotish-cobalt pt-3 mb-2">$1</h1>');
-            
-            // Formato de texto
+
+            // 3. Negritas, cursivas y citas
             text = text.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
             text = text.replace(/\*(.*?)\*/gim, '<em>$1</em>');
             text = text.replace(/^> (.*$)/gim, '<blockquote class="bg-jyotish-soft p-4 rounded-xl border-l-4 border-jyotish-gold text-xs sm:text-sm text-jyotish-dark my-4">$1</blockquote>');
-            
-            // Párrafos
+
+            // 4. Listas de viñetas con guiones (- item)
+            text = text.replace(/^[-\*]\s+(.*$)/gim, '<li class="ml-5 list-disc mb-1.5">$1</li>');
+
+            // 5. Convierte URLs sueltas en enlaces clickeables si quedaron sin formato
+            text = text.replace(/(?<!href=["'])(\bhttps?:\/\/[^\s<>\)\"]+)/gim, function(url) {
+                const cleanUrl = url.replace(/[\.\,\;\)]+$/, '');
+                return `<a href="${cleanUrl}" target="_blank" rel="noopener" class="text-jyotish-cobalt hover:text-jyotish-gold underline font-medium transition-colors break-all">${cleanUrl}</a>`;
+            });
+
+            // 6. Limpia paréntesis o caracteres sobrantes que hayan quedado alrededor de links
+            text = text.replace(/\(\s*(<a [^>]+>.*?<\/a>)\s*\)/gim, '$1');
+            text = text.replace(/\(\s*(<a [^>]+>.*?<\/a>)/gim, '$1');
+
+            // 7. Párrafos y saltos de línea
             text = text.replace(/\n\n+/gim, '</p><p class="font-light leading-relaxed mb-4">');
             text = text.replace(/\n/gim, '<br>');
             return '<p class="font-light leading-relaxed mb-4">' + text + '</p>';
