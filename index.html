@@ -735,21 +735,31 @@
             return './' + path;
         }
 
+        // CONVERSOR DE FORMATO MARKDOWN A HTML (LINKS, TÍTULOS, CITAS)
         function formatMarkdownToHtml(md) {
             if (!md) return '';
             let text = md.trim();
+            
+            // Convierte [Texto](Link) en links clickeables que abren en pestaña nueva
+            text = text.replace(/\[(.*?)\]\((https?:\/\/[^\s\)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener" class="text-jyotish-cobalt hover:text-jyotish-gold underline font-semibold transition-colors">$1</a>');
+            
+            // Encabezados
             text = text.replace(/^### (.*$)/gim, '<h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">$1</h3>');
             text = text.replace(/^## (.*$)/gim, '<h2 class="font-serif font-bold text-xl text-jyotish-cobalt pt-3 mb-2">$1</h2>');
             text = text.replace(/^# (.*$)/gim, '<h1 class="font-serif font-bold text-2xl text-jyotish-cobalt pt-3 mb-2">$1</h1>');
+            
+            // Formato de texto
             text = text.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
             text = text.replace(/\*(.*?)\*/gim, '<em>$1</em>');
             text = text.replace(/^> (.*$)/gim, '<blockquote class="bg-jyotish-soft p-4 rounded-xl border-l-4 border-jyotish-gold text-xs sm:text-sm text-jyotish-dark my-4">$1</blockquote>');
+            
+            // Párrafos
             text = text.replace(/\n\n+/gim, '</p><p class="font-light leading-relaxed mb-4">');
             text = text.replace(/\n/gim, '<br>');
             return '<p class="font-light leading-relaxed mb-4">' + text + '</p>';
         }
 
-        // 1. BASE DE DATOS DE ARTÍCULOS COMPLETOS DE ANDREA
+        // 1. BASE DE DATOS DE ARTÍCULOS LOCALES
         const initialArticles = [
             {
                 id: "art-luna-nueva-cancer-20",
@@ -760,20 +770,21 @@
                 date: "20 Ago 2026",
                 readTime: "2 min de lectura",
                 image: normalizeImageUrl("/assets/uploads/luna_nueva_en_cáncer_2026.png"),
-                summary: "Este ciclo lunar nos desafía a romper las cadenas del egoísmo y a asumir un rol público basado en la ética, la igualdad y la fraternidad, entendiendo que la profundidad de nuestra sanación interna será la medida de nuestra verdadera evolución colectiva.",
+                video: "",
+                summary: "Este ciclo lunar nos desafía a romper las cadenas del egoísmo y a asumir un rol público basado en la ética, la igualdad y la fraternidad.",
                 content: `
                     <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Ritmos Lunares • Andrea B. Menéndez</span>
                     <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-3">Luna Nueva de Cáncer: De la transformación más íntima de nuestro ser hacia la evolución de toda la sociedad.</h2>
                     <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">20 de Agosto de 2026 • 2 min de lectura</div>
                     
-                    <p class="font-light leading-relaxed mb-4 text-gray-600 italic">¡Buenos días! Hoy nos detenemos un momento para reflexionar sobre el clima colectivo que estamos atravesando, contemplándolo a través de la lente de la <strong>Jyotisha</strong> (la astrología védica sideral).</p>
-                    <p class="font-light leading-relaxed mb-4">El <strong>12 de agosto de 2026, a las 14:37 hs</strong>, iniciamos el ciclo de la <strong>Luna Nueva de Cáncer</strong>. Este nuevo punto de partida nos propone un desafío sumamente ambicioso: una transformación profunda que se despliega desde lo más íntimo de nuestro ser para sacudir las estructuras mismas de nuestra sociedad.</p>
+                    <p class="font-light leading-relaxed mb-4 text-gray-600 italic">¡Buenos días! Hoy nos detenemos un momento para reflexionar sobre el clima colectivo que estamos atravesando a través de la <strong>Jyotisha</strong>.</p>
+                    <p class="font-light leading-relaxed mb-4">El <strong>12 de agosto de 2026, a las 14:37 hs</strong>, iniciamos el ciclo de la Luna Nueva de Cáncer, que nos propone una transformación profunda desde lo íntimo hacia lo colectivo.</p>
                     
                     <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">Investigar la raíz de nuestras leyes internas</h3>
-                    <p class="font-light leading-relaxed mb-3">Este ciclo nos invita a mirar sin filtros. Se nos pide investigar la verdad desnuda de las normas y leyes que nos rigen, tanto afuera en lo social como adentro en nuestros propios mandatos familiares. Debemos romper las cadenas del egoísmo y el miedo a la escasez material para poder sanar.</p>
+                    <p class="font-light leading-relaxed mb-3">Este ciclo nos invita a investigar la verdad desnuda de las normas que nos rigen y romper el miedo a la escasez material para poder sanar.</p>
 
                     <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">Construir puentes desde la empatía</h3>
-                    <p class="font-light leading-relaxed mb-4">En nuestros vínculos cotidianos, es momento de superar la frialdad y el cálculo para encontrarnos desde una fraternidad sincera. La sanación que hagamos en silencio en nuestro corazón será el faro que transforme nuestro entorno.</p>
+                    <p class="font-light leading-relaxed mb-4">En nuestros vínculos cotidianos, es momento de superar la frialdad para encontrarnos desde una fraternidad sincera.</p>
 
                     <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">— Andrea B. Menéndez<br><span class="text-xs font-sans font-normal text-gray-500">Astrología Védica — Jyotish Ayni</span></p>
 
@@ -793,24 +804,20 @@
                 date: "Agosto 2026",
                 readTime: "7 min de lectura",
                 image: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&q=80&w=800",
+                video: "",
                 summary: "Análisis de coyuntura y astrología secular. Reflexiones sobre la mediación en la Patagonia y la solidaridad en Pino Hachado frente a la rigidez.",
                 content: `
                     <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Análisis & Coyuntura • Andrea B. Menéndez</span>
                     <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-2">El cielo y la tierra: ¿Evolución colectiva o el costo de la rigidez?</h2>
-                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">Agosto 2026 • 7 min de lectura • Astrología Secular y Realidades Sociales</div>
+                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">Agosto 2026 • 7 min de lectura • Astrología Secular</div>
 
-                    <p class="font-light leading-relaxed mb-4">En el constante devenir de la historia, las crisis y tensiones cotidianas suelen leerse únicamente bajo el lente de la política o la economía. Sin embargo, cuando observamos los acontecimientos bajo las coordenadas de los ciclos lunares y la astrología secular, emerge un mapa de aprendizaje humano sumamente revelador.</p>
+                    <p class="font-light leading-relaxed mb-4">Cuando observamos los acontecimientos bajo las coordenadas de los ciclos lunares y la astrología secular, emerge un mapa de aprendizaje humano sumamente revelador.</p>
 
                     <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">El consenso desde abajo: La mediación en la Patagonia</h3>
-                    <p class="font-light leading-relaxed mb-3">La búsqueda del bien común y la cohesión social encontraron un refugio indispensable en los espacios locales y comunitarios. El ejemplo más claro y esperanzador ha sido la consolidación de los procedimientos de <strong>Mediación Comunitaria e Institucional en la Patagonia y Neuquén</strong>. Frente a la parálisis de respuestas centralizadas, el diálogo entre vecinos, instituciones intermedias y organizaciones civiles demostró que es posible desactivar la confrontación y construir acuerdos sustentables desde el territorio.</p>
+                    <p class="font-light leading-relaxed mb-3">La búsqueda del bien común encontró un refugio indispensable en la Mediación Comunitaria e Institucional en la Patagonia y Neuquén, desactivando la confrontación con acuerdos sustentables.</p>
 
                     <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-3 mb-2">El barro de la frontera: La lección de Pino Hachado</h3>
-                    <p class="font-light leading-relaxed mb-4">En el paso internacional <strong>Pino Hachado</strong>, ante los rigurosos temporales de nieve y las contingencias climáticas que dejaron varados a cientos de transportistas y familias, la imposibilidad de resolver la emergencia de forma aislada forzó a los actores a activar un diálogo puramente operativo y una profunda empatía solidaria. La nieve no distinguió banderas ni jurisdicciones; impuso la necesidad imperiosa de colaborar.</p>
-
-                    <div class="bg-jyotish-cobalt text-white p-5 rounded-2xl text-xs sm:text-sm my-5 font-light text-center space-y-2">
-                        <p class="font-semibold text-jyotish-gold text-base">La pregunta que queda flotando en el aire es sencilla:</p>
-                        <p class="italic text-base">Ante la próxima crisis, ¿elegiremos el puente de la empatía y la flexibilidad o el muro de la rigidez ideológica?</p>
-                    </div>
+                    <p class="font-light leading-relaxed mb-4">En el paso internacional Pino Hachado, la nieve forzó un diálogo operativo y una profunda empatía solidaria para asistir a cientos de familias varadas.</p>
 
                     <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">— Andrea B. Menéndez<br><span class="text-xs font-sans font-normal text-gray-500">Astrología Védica & Análisis Secular — Jyotish Ayni</span></p>
 
@@ -828,73 +835,29 @@
                 badge: "Astrología Védica",
                 badgeClass: "bg-jyotish-cobalt text-white",
                 date: "Reciente 2026",
-               readTime: "6 min de lectura",
-    image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=800",
-    video: "https://youtu.be/GjFeiCV7Pbk",
-    summary: "Un llamado a bajar el volumen del ruido externo para volver a escuchar nuestra propia esencia y cuidar el hogar interior.",
-    content: `
+                readTime: "6 min de lectura",
+                image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=800",
+                video: "https://youtu.be/GjFeiCV7Pbk",
+                summary: "Un llamado a bajar el volumen del ruido externo para volver a escuchar nuestra propia esencia y cuidar el hogar interior.",
+                content: `
                     <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Astrología Védica • Andrea B. Menéndez</span>
                     <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-3">LUNA LLENA DE CÁNCER 2026</h2>
                     <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">Reciente 2026 • 6 min de lectura</div>
 
                     <p class="font-light leading-relaxed mb-4 text-gray-600 italic">Buenos días. Hoy vamos a hablar de la Luna Llena de Cáncer desde la mirada de la Jyotisha.</p>
-                    <p class="font-light leading-relaxed mb-4">Estamos transitando un ciclo lunar que nos pide, ante todo, <strong>bajar el volumen del ruido externo para volver a escuchar nuestra propia esencia y atender nuestro refugio interior</strong>.</p>
+                    <p class="font-light leading-relaxed mb-4">Estamos transitando un ciclo lunar que nos pide bajar el volumen del ruido externo para atender nuestro refugio interior.</p>
                     
-                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">1. En lo Personal: Nuestra "casa" interior</h3>
-                    <p class="font-light leading-relaxed mb-3">A nivel individual, la invitación es a buscar una armonía real y transparente entre lo que pensamos y lo que sentimos. Es el momento de ser profundamente honestos con nosotros mismos para que la belleza y la paz que cultivamos por dentro se manifiesten con claridad hacia afuera.</p>
-                    
-                    <div class="bg-jyotish-soft p-5 rounded-2xl border-l-4 border-jyotish-gold text-xs sm:text-sm text-jyotish-dark my-4 space-y-2">
-                        <p class="font-semibold text-jyotish-cobalt">¿El consejo para hoy?</p>
-                        <p class="font-light">Cuiden su paz mental. No permitan que las voces, demandas o juicios ajenos les generen dudas o inestabilidad en su hogar. Es tiempo de sanar heridas viejas, soltar apegos que ya cumplieron su ciclo y <em>'soñar con los pies en la tierra'</em>. Se trata de proyectar con amor el futuro que anhelamos, pero actuando con realismo, orden y metas claras para transformar cualquier foco de irritabilidad en bienestar duradero.</p>
-                    </div>
+                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">1. En lo Personal: Nuestra casa interior</h3>
+                    <p class="font-light leading-relaxed mb-3">Buscamos una armonía real entre lo que pensamos y sentimos, soñando con los pies en la tierra y actuando con realismo.</p>
 
                     <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">2. En lo Político y Social: Construir desde el "nosotros"</h3>
-                    <p class="font-light leading-relaxed mb-3">En el plano colectivo, este plenilunio nos exige superar de una vez por todas el individualismo extremo que nos fragmenta como sociedad. Necesitamos hacer la transición urgente del 'sálvese quien pueda' a una construcción genuina basada en el bienestar común, respaldada por liderazgos benevolentes, éticos y con verdadera vocación de servicio.</p>
-
-                    <div class="bg-jyotish-cobalt text-white p-5 rounded-2xl text-xs sm:text-sm my-4 font-light text-center space-y-2">
-                        <p class="font-semibold text-jyotish-gold">Momento de actuar con diplomacia, pragmatismo y mucha honestidad.</p>
-                        <p>Menos ego y más equidad para construir un presente tangible y solidario. La oportunidad es hoy: menos ego y más equipo, tanto adentro de tu casa como afuera en la comunidad.</p>
-                    </div>
+                    <p class="font-light leading-relaxed mb-3">En el plano colectivo, superamos el individualismo para enfocarnos en el bienestar común y la equidad comunitaria.</p>
 
                     <p class="text-right font-serif font-bold text-jyotish-cobalt pt-2">— Andrea B. Menéndez<br><span class="text-xs font-sans font-normal text-gray-500">Jyotish Ayni</span></p>
 
                     <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
                         <button onclick="closeArticleModal(); openBookingModal('Seguimiento Ciclos Lunares');" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white text-xs font-semibold px-5 py-3 rounded-full transition-all cursor-pointer">
                             Agendar Consulta con Andrea por WhatsApp
-                        </button>
-                    </div>
-                `
-            },
-            {
-                id: "art-luna-nueva-geminis",
-                title: "Lo Que Nos Dejó la Luna Nueva de Géminis: El Llamado al Servicio",
-                category: "Radio Mega 91.9",
-                badge: "Radio Mega 91.9",
-                badgeClass: "bg-jyotish-cobalt text-white",
-                date: "Columna Radio Mega 91.9",
-                readTime: "5 min de lectura",
-                image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
-                summary: "Analizamos los acontecimientos bajo esta luna, los extremos energéticos y la respuesta solidaria de la comunidad en Zapala y Neuquén.",
-                content: `
-                    <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">Radio Mega 91.9 FM • Andrea B. Menéndez</span>
-                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-jyotish-cobalt mb-2">Lo Que Nos Dejó la Luna Nueva de Géminis</h2>
-                    <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">Columna Radial • 5 min de lectura • Radio Mega 91.9 Zapala</div>
-
-                    <p class="font-light leading-relaxed mb-4">Hoy nos proponemos analizar con detenimiento la realidad que nos tocó vivir bajo el influjo de la <strong>Luna Nueva en Géminis</strong>, enfocándonos en las energías y propuestas que nos llegaron desde el cosmos.</p>
-                    <p class="font-light leading-relaxed mb-4">Desde el inicio de este ciclo, se nos advirtió que atravesaríamos momentos de <em>'todo o nada'</em>. Esta energía bipolar o polarizada dificultó en gran medida la negociación o la posibilidad de encontrar un punto medio, llevándonos con facilidad a caer en juicios apresurados y posturas destructivas ante la primera señal de tensión.</p>
-
-                    <h3 class="font-serif font-bold text-lg text-jyotish-cobalt pt-2 mb-2">La respuesta en la comunidad (Zapala y Neuquén)</h3>
-                    <p class="font-light leading-relaxed mb-4">Sin embargo, frente al rigor implacable de las heladas y la nieve que azotó a Zapala y al interior neuquino, la solidaridad vecinal demostró ser el verdadero y único motor que nos sostiene: el vecino que sale a limpiar la vereda para que otro no se resbale, las redes espontáneas para asistir en las rutas congeladas o el vecino que abriga a quien pasa frío. Allí donde la rigidez se quiebra, el servicio desinteresado y el amor comunitario iluminan el camino.</p>
-
-                    <div class="text-right font-serif text-sm text-jyotish-cobalt pt-2">
-                        <p class="font-bold">Andrea B. Menéndez</p>
-                        <p class="text-xs font-sans text-gray-500">Astrología Védica — Radio Mega 91.9 FM Zapala</p>
-                        <a href="https://www.radiomega919zapala.org" target="_blank" class="text-xs text-jyotish-gold font-medium underline">www.radiomega919zapala.org</a>
-                    </div>
-
-                    <div class="pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center gap-4">
-                        <button onclick="closeArticleModal(); openBookingModal('Seguimiento Ciclos Lunares');" class="bg-jyotish-cobalt hover:bg-jyotish-dark text-white text-xs font-semibold px-5 py-3 rounded-full transition-all cursor-pointer">
-                            Agendar Consulta por WhatsApp
                         </button>
                     </div>
                 `
@@ -911,13 +874,13 @@
             return 'astrologia';
         }
 
-        // 2. RENDERIZADO DE ARTÍCULOS EN LA PÁGINA
+        // 2. RENDERIZADO DE ARTÍCULOS EN PANTALLA
         function renderArticlesGrid() {
             const grid = document.getElementById('articlesGrid');
             if (!grid) return;
             grid.innerHTML = '';
 
-            allArticles.forEach(art => {
+            allArticles.forEach((art, index) => {
                 const catFilter = getCategoryFilter(art.category);
                 const card = document.createElement('article');
                 card.className = 'blog-card bg-jyotish-cream rounded-3xl overflow-hidden border border-gray-200 card-shadow flex flex-col justify-between';
@@ -946,7 +909,7 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openArticleModal('${art.id}')" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-2.5 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <button onclick="openArticleByIndex(${index})" class="w-full bg-white hover:bg-jyotish-soft text-jyotish-cobalt font-semibold text-xs py-2.5 rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow">
                             <span>Leer Artículo Completo</span>
                             <i class="fa-solid fa-book-open text-[10px]"></i>
                         </button>
@@ -956,7 +919,7 @@
             });
         }
 
-        // 3. PARSER DINÁMICO DE ARCHIVOS .MD Y .JSON DE GITHUB
+        // 3. PARSER DINÁMICO DE ARCHIVOS .MD DE GITHUB
         function parseMarkdownFrontmatter(rawText) {
             let meta = {};
             let body = rawText;
@@ -983,38 +946,6 @@
 
         async function fetchExternalPosts() {
             try {
-                // Leer articulos.json si existe en la raíz
-                try {
-                    const resJson = await fetch('./articulos.json');
-                    if (resJson.ok) {
-                        const items = await resJson.json();
-                        const list = Array.isArray(items) ? items : (items.articulos || []);
-                        list.forEach(p => {
-                            if (p.title && !allArticles.some(a => a.title.trim().toLowerCase() === p.title.trim().toLowerCase())) {
-                                allArticles.unshift({
-                                    id: 'json-' + Math.random().toString(36).substr(2, 9),
-                                    title: p.title,
-                                    category: p.category || 'Astrología Védica',
-                                    badge: p.category || 'Astrología Védica',
-                                    badgeClass: 'bg-jyotish-cobalt text-white',
-                                    date: p.date || 'Reciente',
-                                    readTime: p.readTime || '5 min de lectura',
-                                    image: normalizeImageUrl(p.image),
-                                    summary: p.summary || p.description || '',
-                                    content: `
-                                        <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">${p.category || 'Astrología Védica'} • Andrea B. Menéndez</span>
-                                        <h2 class="font-serif text-2xl font-bold text-jyotish-cobalt mb-3">${p.title}</h2>
-                                        <div class="text-xs text-gray-400 mb-4 pb-2 border-b border-gray-100">${p.date || ''} • ${p.readTime || ''}</div>
-                                        <div class="text-gray-700 leading-relaxed font-light space-y-4">${formatMarkdownToHtml(p.body || p.content || '')}</div>
-                                    `
-                                });
-                            }
-                        });
-                        renderArticlesGrid();
-                    }
-                } catch(e) {}
-
-                // Leer archivos .md de GitHub _posts/articulos
                 const ghApi = 'https://api.github.com/repos/jyotishayni/web-jyotish-ayni/contents/_posts/articulos';
                 const resGh = await fetch(ghApi);
                 if (resGh.ok) {
@@ -1028,14 +959,15 @@
                                     const { meta, body } = parseMarkdownFrontmatter(rawText);
                                     if (meta.title && !allArticles.some(a => a.title.trim().toLowerCase() === meta.title.trim().toLowerCase())) {
                                         allArticles.unshift({
-                                            id: 'md-' + file.name,
+                                            id: file.name,
                                             title: meta.title,
                                             category: meta.category || 'Ritmos Lunares',
                                             badge: meta.category || 'Ritmos Lunares',
                                             badgeClass: 'bg-jyotish-gold text-jyotish-dark',
                                             date: meta.date || 'Reciente',
-                                            readTime: meta.readTime || '3 min de lectura',
+                                            readTime: meta.readTime || '4 min de lectura',
                                             image: normalizeImageUrl(meta.image),
+                                            video: meta.video || '',
                                             summary: meta.summary || '',
                                             content: `
                                                 <span class="text-xs text-jyotish-gold font-bold uppercase tracking-wider block mb-1">${meta.category || 'Ritmos Lunares'} • Andrea B. Menéndez</span>
@@ -1052,15 +984,49 @@
                     }
                 }
             } catch (err) {
-                console.log("Artículos cargados de forma local");
+                console.log("Artículos locales activos");
             }
         }
 
-        // Inicialización
-        renderArticlesGrid();
-        fetchExternalPosts();
+        // 4. CONTROL DEL MODAL Y VIDEOS
+        function getYouTubeId(url) {
+            if (!url || typeof url !== 'string') return null;
+            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+            return match ? match[1] : null;
+        }
 
-        // 4. MODALES
+        function openArticleByIndex(index) {
+            const art = allArticles[index];
+            if (!art) return;
+
+            const modal = document.getElementById('articleModal');
+            const body = document.getElementById('articleBody');
+            
+            const videoId = getYouTubeId(art.video);
+            const videoHtml = videoId 
+                ? `<div class="w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-lg bg-black">
+                     <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" frameborder="0" allowfullscreen></iframe>
+                   </div>` 
+                : '';
+
+            body.innerHTML = videoHtml + (art.content || '');
+            
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                const body = document.getElementById('articleBody');
+                if (body) body.innerHTML = '';
+            }
+        }
+
         function openBookingModal(serviceName) {
             const modal = document.getElementById('bookingModal');
             const select = document.getElementById('modalService');
@@ -1081,50 +1047,7 @@
             if (modal) modal.style.display = 'none';
         }
 
-function getYouTubeId(url) {
-    if (!url || typeof url !== 'string') return null;
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-    return match ? match[1] : null;
-}
-
-function openArticleModal(id) {
-    const modal = document.getElementById('articleModal');
-    const body = document.getElementById('articleBody');
-    const art = allArticles.find(a => String(a.id) === String(id) || a.id == id);
-    
-    if (art && body) {
-        const videoId = getYouTubeId(art.video);
-        const videoHtml = videoId 
-            ? `<div class="w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-lg bg-black">
-                 <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" frameborder="0" allowfullscreen></iframe>
-               </div>` 
-            : '';
-
-        let htmlText = art.content || '';
-        if (!htmlText && art.body) {
-            htmlText = (typeof marked !== 'undefined') ? marked.parse(art.body) : art.body;
-        }
-
-        body.innerHTML = videoHtml + htmlText;
-        
-        if (modal) {
-            modal.classList.remove('hidden');
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-    }
-}
-
-function closeArticleModal() {
-    const modal = document.getElementById('articleModal');
-    if (modal) {
-        modal.classList.add('hidden');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        const body = document.getElementById('articleBody');
-        if (body) body.innerHTML = '';
-    }
-}      
+        // Cierres de ventanas modales al hacer clic afuera
         document.getElementById('bookingModal').addEventListener('click', function(e) {
             if (e.target === this) closeBookingModal();
         });
@@ -1145,7 +1068,7 @@ function closeArticleModal() {
             closeBookingModal();
         }
 
-        // 6. FILTRO DE SERVICIOS
+        // 6. FILTROS DE SERVICIOS
         const filterBtns = document.querySelectorAll('.filter-btn');
         const serviceCards = document.querySelectorAll('.service-card');
         filterBtns.forEach(btn => {
@@ -1163,7 +1086,7 @@ function closeArticleModal() {
             });
         });
 
-        // 7. FILTRO DE BLOG
+        // 7. FILTROS DE BITÁCORA
         const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
         blogFilterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1187,6 +1110,10 @@ function closeArticleModal() {
         if (mBtn && mMenu) {
             mBtn.addEventListener('click', () => { mMenu.classList.toggle('hidden'); });
         }
+
+        // Inicialización
+        renderArticlesGrid();
+        fetchExternalPosts();
     </script>
 </body>
 </html>
