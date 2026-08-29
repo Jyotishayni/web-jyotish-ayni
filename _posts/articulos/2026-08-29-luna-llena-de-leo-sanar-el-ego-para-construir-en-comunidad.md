@@ -3,7 +3,7 @@ title: 'Luna Llena de Leo: Sanar el ego para construir en comunidad'
 date: 28 Ago 2026
 category: Astrología Védica
 readTime: 4 min de lectura
-image: ''
+image: /assets/uploads/luna llena leo 12 ago 26-Cover.jpg
 video: https://youtu.be/GjFeiCV7Pbk
 summary: La luna llena de Leo, nos hace un llamado a soltar liderazgos autoritarios y apostar por la educación, el arte y el bienestar de las nuevas generaciones. Conoce la lectura de la luna en esta nota.
 ---
@@ -61,7 +61,7 @@ El destino de nuestra comunidad depende de cómo decidamos abordar estas dificul
 Podemos elegir el estancamiento y la opresión, o asumir el compromiso de construir bases sólidas mediante disciplinas colectivas que hagan realidad nuestros sueños comunes.
 
  **Luna llena de leo momento de actuar sin prisa, pero con paso firme y seguro. Orientándonos a construir un futuro próspero basádo en el legado creativo de los ancestros y el bienestar de las nuevas generaciones. Momento de superar las inseguridades y sumar un actuar con la convicción de que la humanidad es capaz de materializar grandes metas colectivas al fomentar liderazgos orientados al bien común dirigidos hacia la unidad y la justicia social.**
- 
+
 Andrea B. Menéndez
 
  Astrología Védica.
