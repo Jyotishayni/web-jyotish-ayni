@@ -735,7 +735,8 @@
             return './' + path;
         }
 
-       function formatMarkdownToHtml(md) {
+       // CONVERSOR DE FORMATO MARKDOWN A HTML (IMÁGENES, LINKS, TÍTULOS Y CITAS)
+        function formatMarkdownToHtml(md) {
             if (!md) return '';
             let text = md.trim();
 
@@ -781,6 +782,7 @@
             text = text.replace(/\n/gim, '<br>');
             return '<p class="font-light leading-relaxed mb-4">' + text + '</p>';
         }
+        
         // 1. BASE DE DATOS DE ARTÍCULOS LOCALES
         const initialArticles = [
             {
