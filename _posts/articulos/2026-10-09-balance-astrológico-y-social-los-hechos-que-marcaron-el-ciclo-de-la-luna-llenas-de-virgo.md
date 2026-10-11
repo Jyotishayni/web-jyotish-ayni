@@ -3,7 +3,7 @@ title: 'Balance Astrológico y Social: Los hechos que marcaron el ciclo de la Lu
 date: 09 de octubre 2026
 category: Análisis & Coyuntura
 readTime: 4 min de lectura
-image: /assets/uploads/Diseño sin título.png
+image: /assets/uploads/luna news.png
 video: ''
 summary: 'El período comprendido entre el 26 de septiembre y el 9 de octubre de 2026 expuso con notable precisión cómo las fuerzas del universo impactan de manera concreta en nuestra realidad institucional, económica y comunitaria. Bajo la influencia de la Luna Llena de Virgo, la agenda social y política se vio confrontada ante una encrucijada clara: la urgencia de abandonar los esquemas rígidos e individualistas para dar paso a redes de apoyo éticas, transparentes y sustentadas en la responsabilidad compartida.'
 ---
