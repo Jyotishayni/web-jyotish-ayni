@@ -3,7 +3,7 @@ title: 'Luna Nueva de Virgo: Nadie se salva solo y el fin del liderazgo absoluto
 date: 10 oct 2026
 category: Ritmos Lunares
 readTime: 4 min de lectura
-image: /assets/uploads/Diseño sin título.png
+image: /assets/uploads/luna nueva virgo infografia.png
 video: ''
 summary: |-
   La Luna Nueva de Virgo nos convoca a desarmar el pesimismo y sanar el vínculo con lo material a través del equilibrio entre dar y recibir.
