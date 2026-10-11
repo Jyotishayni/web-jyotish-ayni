@@ -1,5 +1,5 @@
 ---
-title: 'Balance Astrológico y Social: Los hechos que marcaron el ciclo de la Luna Llenas de Virgo'
+title: 'Balance Astrológico y Social: Los hechos que marcaron el ciclo de la Luna Llena de Virgo'
 date: 09 de octubre 2026
 category: Análisis & Coyuntura
 readTime: 4 min de lectura
