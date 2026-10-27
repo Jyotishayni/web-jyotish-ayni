@@ -1166,26 +1166,56 @@ function openArticleByIndex(index) {
             mBtn.addEventListener('click', () => { mMenu.classList.toggle('hidden'); });
         }
 
-        // Inicialización
+      // Función para abrir la nota desde un enlace compartido (#art-...)
+        let openedFromHash = false;
+        function checkUrlHash() {
+            if (openedFromHash || !window.location.hash) return;
+            const rawHash = window.location.hash.replace('#', '').trim();
+            if (!rawHash) return;
+
+            let decodedHash = rawHash;
+            try {
+                decodedHash = decodeURIComponent(rawHash);
+            } catch (e) {}
+
+            const idx = allArticles.findIndex(a => {
+                if (!a || !a.id) return false;
+                const idStr = String(a.id);
+                return idStr === rawHash || idStr === decodedHash || decodeURIComponent(idStr) === decodedHash;
+            });
+
+            if (idx !== -1) {
+                openedFromHash = true;
+                openArticleByIndex(idx);
+            }
+        }
+
+        // Inicialización de la grilla
         renderArticlesGrid();
-        fetchExternalPosts();
-        // Inicialización
-renderArticlesGrid();
+        checkUrlHash();
 
-// Abre la nota automáticamente si el visitante entró con un enlace compartido (#art-...)
-function checkUrlHash() {
-    const hash = window.location.hash.replace('#', '');
-    if (!hash) return;
-    const idx = allArticles.findIndex(a => String(a.id) === hash);
-    if (idx !== -1) {
-        openArticleByIndex(idx);
-    }
-}
+        if (typeof fetchExternalPosts === 'function') {
+            const res = fetchExternalPosts();
+            if (res && typeof res.then === 'function') {
+                res.then(() => checkUrlHash());
+            }
+        }
 
-if (typeof fetchExternalPosts === 'function') {
-    fetchExternalPosts().then(() => checkUrlHash());
-}
-setTimeout(checkUrlHash, 600);
+        // Reintenta durante 4 segundos hasta que los archivos .md terminen de descargarse
+        const hashTimer = setInterval(() => {
+            if (openedFromHash) {
+                clearInterval(hashTimer);
+            } else {
+                checkUrlHash();
+            }
+        }, 300);
+
+        setTimeout(() => clearInterval(hashTimer), 4000);
+
+        window.addEventListener('hashchange', () => {
+            openedFromHash = false;
+            checkUrlHash();
+        });
     </script>
 </body>
 </html>
