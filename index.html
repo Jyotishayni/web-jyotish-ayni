@@ -1019,21 +1019,36 @@
             return match ? match[1] : null;
         }
 
-        function openArticleByIndex(index) {
+function openArticleByIndex(index) {
             const art = allArticles[index];
             if (!art) return;
 
             const modal = document.getElementById('articleModal');
             const body = document.getElementById('articleBody');
             
+            // Actualiza la URL arriba en el navegador con el ID de la nota
+            if (art.id) {
+                history.replaceState(null, null, '#' + art.id);
+            }
+
             const videoId = getYouTubeId(art.video);
             const videoHtml = videoId 
                 ? `<div class="w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-lg bg-black">
-                     <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" frameborder="0" allowfullscreen></iframe>
+                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}?rel=0" frameborder="0" allowfullscreen></iframe>
                    </div>` 
                 : '';
 
-            body.innerHTML = videoHtml + (art.content || '');
+            // Botón para copiar el enlace directo
+            const shareBtnHtml = `
+                <div class="flex justify-end mb-4">
+                    <button onclick="copyArticleLink('${art.id}')" id="copyBtn-${art.id}" class="inline-flex items-center gap-1.5 text-xs font-medium text-jyotish-cobalt bg-jyotish-soft hover:bg-jyotish-light/30 px-3 py-1.5 rounded-full transition-colors cursor-pointer border border-jyotish-cobalt/20">
+                        <i class="fa-solid fa-share-nodes text-jyotish-gold"></i>
+                        <span>Copiar enlace de esta nota</span>
+                    </button>
+                </div>
+            `;
+
+            body.innerHTML = shareBtnHtml + videoHtml + (art.content || '');
             
             if (modal) {
                 modal.style.display = 'flex';
@@ -1048,7 +1063,23 @@
                 document.body.style.overflow = 'auto';
                 const body = document.getElementById('articleBody');
                 if (body) body.innerHTML = '';
+                // Limpia el # de la URL al cerrar la nota
+                history.replaceState(null, null, window.location.pathname);
             }
+        }
+
+        // Función que copia el link al portapapeles
+        function copyArticleLink(artId) {
+            const url = window.location.origin + window.location.pathname + '#' + artId;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById('copyBtn-' + artId);
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i> <span class="text-emerald-700 font-bold">¡Enlace copiado!</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-share-nodes text-jyotish-gold"></i> <span>Copiar enlace de esta nota</span>';
+                    }, 2500);
+                }
+            });
         }
 
         function openBookingModal(serviceName) {
@@ -1138,6 +1169,23 @@
         // Inicialización
         renderArticlesGrid();
         fetchExternalPosts();
+        // Inicialización
+renderArticlesGrid();
+
+// Abre la nota automáticamente si el visitante entró con un enlace compartido (#art-...)
+function checkUrlHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    const idx = allArticles.findIndex(a => String(a.id) === hash);
+    if (idx !== -1) {
+        openArticleByIndex(idx);
+    }
+}
+
+if (typeof fetchExternalPosts === 'function') {
+    fetchExternalPosts().then(() => checkUrlHash());
+}
+setTimeout(checkUrlHash, 600);
     </script>
 </body>
 </html>
