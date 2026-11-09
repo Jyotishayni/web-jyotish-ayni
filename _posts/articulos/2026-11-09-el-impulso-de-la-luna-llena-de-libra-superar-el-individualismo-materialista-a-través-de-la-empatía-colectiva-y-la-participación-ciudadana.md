@@ -1,6 +1,6 @@
 ---
 title: 'El impulso de la Luna Llena de Libra: superar el individualismo materialista a través de la empatía colectiva y la participación ciudadana'
-date: 9/11/2026
+date: 9 de noviembre 2026
 category: Análisis & Coyuntura
 readTime: 3 min de lectura
 image: /assets/uploads/caratula.jpg
